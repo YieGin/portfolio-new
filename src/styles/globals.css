@@ -39,6 +39,30 @@
     --radius: 0.5rem;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+  }
+  ::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0);
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    border: 0;
+    background-color: #00dac4;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #00dac4;
+  }
+   
+
   .dark {
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;

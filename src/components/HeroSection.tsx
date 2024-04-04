@@ -1,17 +1,15 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { HeroImage } from "../../public/assets";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarImage } from "./ui/avatar";
 import TransitionLink from "./TransitionLink";
 
 const HeroSection = () => {
   return (
-    <section className="container lg:py-16 flex">
+    <section className="container py-10 lg:py-16 flex">
       <div className="grid grid-cols-1 sm:grid-cols-12 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -23,7 +21,6 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-200 to-teal-500">
               Hello, I'm
             </span>
-
             <br></br>
             <TypeAnimation
               sequence={[

@@ -4,7 +4,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
+    <div className='flex flex-col items-center justify-center w-full'>
       <HeroSection />
       <Projects />
     </div>

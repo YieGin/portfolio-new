@@ -13,7 +13,7 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <Menu className="text-orange-500" />
+        <Menu className="text-[#00dac4]" />
       </SheetTrigger>
       <SheetContent className="space-y-3">
         <SheetDescription className="flex flex-col gap-4 font-Rubik">

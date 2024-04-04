@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import '@/styles/globals.css'
-import '@/styles/style.scss'
+import "@/styles/globals.css";
+import "@/styles/style.scss";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
@@ -28,9 +28,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <div className="py-24">
-            {children}
-          </div>
+          {children}
           <Toaster visibleToasts={1} position="bottom-right" richColors />
         </ThemeProvider>
       </body>

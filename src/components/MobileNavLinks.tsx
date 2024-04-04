@@ -15,7 +15,7 @@ const MobileNavLinks = () => {
             isActive("/projects")
               ? "text-[#000] dark:text-white"
               : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-bold text`}
+          } text-[0.8rem] md:text-[1rem] text-[#FFF] font-bold text`}
         >
           Projects
         </TransitionLink>
@@ -26,7 +26,7 @@ const MobileNavLinks = () => {
             isActive("/about")
               ? "text-[#000] dark:text-white"
               : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-bold text`}
+          } text-[0.8rem] md:text-[1rem] text-[#FFF] font-bold text`}
         >
           About
         </TransitionLink>
@@ -37,7 +37,7 @@ const MobileNavLinks = () => {
             isActive("/contact")
               ? "text-[#000] dark:text-white"
               : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-bold text`}
+          } text-[0.8rem] md:text-[1rem] text-[#FFF] font-bold text`}
         >
           Contact
         </TransitionLink>
@@ -48,7 +48,7 @@ const MobileNavLinks = () => {
             isActive("/uses")
               ? "text-[#000] dark:text-white"
               : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-bold text`}
+          } text-[0.8rem] md:text-[1rem] text-[#FFF] font-bold text`}
         >
           Uses
         </TransitionLink>
