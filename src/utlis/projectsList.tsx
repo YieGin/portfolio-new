@@ -1,4 +1,4 @@
-import { BiteZImg, BookoeImg, InpuctImg, RolexImg, VanguardEliteImg } from "../../public/assets";
+import { BiteZImg, BookoeImg, InpuctImg, InstagramImg, RolexImg, ShoppingImg, SpotfiyImg, VanguardEliteImg } from "../../public/assets";
 import { SiNextdotjs } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 import React from "react";
@@ -15,7 +15,7 @@ interface CaseStudy {
   skills: string[];
 }
 
-const caseStudy: CaseStudy[] = [
+const projectsList: CaseStudy[] = [
   {
     imgSrc: BiteZImg,
     icon: SiNextdotjs,
@@ -47,7 +47,7 @@ const caseStudy: CaseStudy[] = [
       "I developed this unique website with a keen focus on detail, combining sophisticated design elements crafted by an experienced designer. The code is meticulously clean and well-organized, ensuring that the site is fully responsive and adapts seamlessly across a wide range of screen resolutions, from 4K to 320px. I invite you to explore the site and would greatly appreciate your feedback on how effectively it integrates professional design with functionality. Thank you!",
     websiteLink: "https://gym-vanguard-elite-eedd.vercel.app",
     codeLink: "https://github.com/YieGin/Gym-Vanguard-Elite",
-    skills: ["React", "CSS3", "Responsive Design", "Tailwind css", "JavaScript", "Framer Motion", "ux/ui"],
+    skills: ["React", "CSS3", "Responsive Design", "Tailwind css", "JavaScript", "ux/ui", "Framer Motion"],
   },
   {
     imgSrc: BookoeImg,
@@ -62,4 +62,4 @@ const caseStudy: CaseStudy[] = [
   },
 ];
 
-export default caseStudy;
+export default projectsList;

@@ -1,12 +1,14 @@
+import About from '@/components/About'
 import HeroSection from '@/components/HeroSection'
 import Projects from '@/components/Projects'
 import React from 'react'
 
 const page = () => {
   return (
-    <div className='flex flex-col items-center justify-center w-full'>
+    <div className='pb-20'>
       <HeroSection />
       <Projects />
+      <About />
     </div>
   )
 }
