@@ -25,7 +25,7 @@ const projectsList: CaseStudy[] = [
       "This full-stack food ordering website is built with a modern technology stack that includes Next.js, Tailwind CSS, React Query, MongoDB, Node.js, and Express.js. It features a dual-theme interface, offering users the choice between dark and light modes to suit their preference. Designed to be fully responsive.",
     websiteLink: "https://mern-food-ordering-app-frontend-one.vercel.app",
     codeLink: "https://github.com/YieGin/mern-food-ordering-app-frontend",
-    skills: ["Next.js", "Tailwind css", "TypeScript", "Stripe", "Node js", "Express js", "ux/ui", "MongoDB", "Responsive Design"],
+    skills: ["Next.js", "Tailwind css", "TypeScript", "Stripe", "Node js", "Express js", "ux/ui", "MongoDB", "Responsive Design", "Auth0"],
   },
   {
     imgSrc: InpuctImg,
@@ -58,7 +58,7 @@ const projectsList: CaseStudy[] = [
       "I created this book e-commerce website to showcase my skills, utilizing Next.js, Tailwind CSS, and TypeScript for the frontend. For the backend, I employed Python, Django, and SQLite, with JWT tokens and HttpOnly cookies to enhance security. This combination of technologies allowed me to build a secure, efficient, and user-friendly platform for selling books online.",
     websiteLink: "https://bookoe-jade.vercel.app",
     codeLink: "https://github.com/YieGin/Bookoe",
-    skills: ["Next js", "Tailwind css", "TypeScript", "Responsive Design", "Python", "Django", "SQLite", "JWT tokens", "ui/ux"],
+    skills: ["Next js", "Tailwind css", "TypeScript", "Responsive Design", "Python", "Django", "SQLite", "JWT tokens", "ui/ux", "JWT"],
   },
 ];
 

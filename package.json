@@ -21,7 +21,6 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@react-spring/web": "^9.7.3",
-    "@tszhong0411/ui": "^0.0.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cobe": "^0.6.3",

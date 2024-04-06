@@ -1,4 +1,5 @@
 import About from '@/components/About'
+import Experience from '@/components/Experience'
 import HeroSection from '@/components/HeroSection'
 import Projects from '@/components/Projects'
 import React from 'react'
@@ -9,6 +10,7 @@ const page = () => {
       <HeroSection />
       <Projects />
       <About />
+      <Experience />
     </div>
   )
 }

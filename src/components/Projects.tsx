@@ -6,20 +6,32 @@ import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { RocketIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
 import projectsList from "@/utlis/projectsList";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
 const Projects = () => {
   return (
     <div className="container w-full">
-      <h1 className="text-4xl text-center">Selected Projects</h1>
+      <AnimatedCharacters
+        className="text-4xl text-center font-bold"
+        text="Selected Projects"
+        type="heading1"
+      />
       <div className="flex items-center justify-center w-full">
         <div className="mt-12 grid xl:grid-cols-2 gap-5">
           {projectsList.map((study, index) => (
-            <div key={index} className="rounded-xl p-5 shadow-feature-card dark:shadow-feature-card-dark border-2 w-full">
+            <div
+              key={index}
+              className="rounded-xl p-5 shadow-feature-card dark:shadow-feature-card-dark border-2 w-full"
+            >
               <div className="flex flex-col md:flex-row gap-5">
                 <div className="flex flex-col md:w-1/2">
                   <div className="flex items-center gap-2 mb-5">
                     <study.icon />
-                    <p>{study.title}</p>
+                    <AnimatedCharacters
+                      className="text-1xl font-bold"
+                      type="heading2"
+                      text={study.title}
+                    />
                   </div>
                   <Image
                     src={study.imgSrc}
@@ -30,17 +42,17 @@ const Projects = () => {
                   />
                 </div>
                 <div className="md:w-1/2 md:mt-10 flex flex-col gap-y-3">
-                  <p className="text-3xltext-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-red-200">
-                    {study.subtitle}
-                  </p>
+                  <AnimatedCharacters
+                    className="text-2xl font-bold"
+                    type="heading2"
+                    text={study.subtitle}
+                  />
                   <p className="text-[0.8rem] line-clamp-5">
                     {study.description}
                   </p>
                   <Link target="_blank" href={study.websiteLink}>
                     <Alert className="p-2 hover:underline">
-                      <AlertDescription>
-                        {study.websiteLink}
-                      </AlertDescription>
+                      <AlertDescription>{study.websiteLink}</AlertDescription>
                       <RocketIcon className="h-4 w-4" />
                     </Alert>
                   </Link>

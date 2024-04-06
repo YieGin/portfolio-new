@@ -41,7 +41,7 @@ export const SOCIALS: Props = [
 
 const Connect = () => {
   return (
-    <div className="flex flex-col gap-6 border-[1px] w-[300px] rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:p-6">
+    <div className="flex flex-col gap-6 border-[1px] md:w-1/2 xl:w-[300px] rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:p-6">
       <div className="flex items-center gap-2">
         <SiSocialblade className="size-[18px]" />
         <h2 className="text-sm font-light">Connect</h2>
