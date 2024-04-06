@@ -19,7 +19,7 @@ const HeroSection = () => {
         >
           <h1 className="dark:text-white font-bold mb-4 text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-200 to-teal-500">
-              Hello, I'm
+              Hello, I&apos;m
             </span>
             <br></br>
             <TypeAnimation
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             With a passion for creating seamless user experiences and a
             dedication to modern, clean design, I craft full-stack solutions
-            that bring your digital visions to life. Let's build something great
+            that bring your digital visions to life. Let&apos;s build something great
             together.
           </p>
           <div className="flex items-center justify-center sm:items-start sm:justify-normal gap-5">

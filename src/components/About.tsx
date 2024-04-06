@@ -29,16 +29,16 @@ const About = () => {
           </div>
           <p className="text-[0.8rem] md:text-[1rem]">
             With over four years of full stack development experience since
-            2021, I've cultivated a strong foundation in HTML, CSS, and
+            2021, I&apos;ve cultivated a strong foundation in HTML, CSS, and
             JavaScript, progressing to sophisticated front-end development with
             React.js and Next.js. My backend expertise extends to Python
             frameworks like Flask and Django, and Node.js for RESTful API
             integration. My diverse project portfolio includes a Django-based
             book-selling platform and a comprehensive MERN stack food ordering
             service, demonstrating my adaptability and modern authentication
-            methods. Committed to lifelong learning and teamwork, I'm poised to
-            innovate in the dynamic field of web development. If there's an
-            opportunity that aligns with my expertise, please don't hesitate to
+            methods. Committed to lifelong learning and teamwork, I&apos;m poised to
+            innovate in the dynamic field of web development. If there&apos;s an
+            opportunity that aligns with my expertise, please don&apos;t hesitate to
             reach out for a conversation.
           </p>
         </div>
