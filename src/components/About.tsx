@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import LocationCard from "./Cobe";
+import LocationCard from "./LocationCard";
 import Connect from "./Connect";
 import { SiSocialblade } from "react-icons/si";
 import Stacks from "./Stacks";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
+import { Button } from "./ui/button";
 
 const About = () => {
   return (
@@ -42,6 +43,9 @@ const About = () => {
             reach out for a conversation.
           </p>
         </div>
+      </div>
+      <div className="flex items-center justify-center mt-5">
+        <Button className="font-bold">Know more about me</Button>
       </div>
     </div>
   );
