@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import createGlobe from "cobe";
 import { useSpring } from "react-spring";
+import { motion } from "framer-motion";
 
 const CobeRotate: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -25,7 +26,8 @@ const CobeRotate: React.FC = () => {
     window.addEventListener("resize", onResize);
     onResize();
 
-    const globe = createGlobe(canvasRef.current!, { // assert that canvasRef.current is non-null
+    const globe = createGlobe(canvasRef.current!, {
+      // assert that canvasRef.current is non-null
       devicePixelRatio: 2,
       width: width * 2,
       height: width * 2,
@@ -62,12 +64,26 @@ const CobeRotate: React.FC = () => {
     };
   }, [r]);
 
+  const itemVariants = {
+    offscreen: { opacity: 0, y: 100 },
+    onscreen: () => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    }),
+  };
+
   return (
-    <div className="lg:flex hidden"
+    <motion.div
+      variants={itemVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.5 }}
+      className="lg:flex hidden"
       style={{
         width: "100%",
         maxWidth: 600,
-        aspectRatio: '1 / 1',
+        aspectRatio: "1 / 1",
         margin: "auto",
         position: "relative",
       }}
@@ -75,7 +91,8 @@ const CobeRotate: React.FC = () => {
       <canvas
         ref={canvasRef}
         onPointerDown={(e) => {
-          pointerInteracting.current = e.clientX - pointerInteractionMovement.current;
+          pointerInteracting.current =
+            e.clientX - pointerInteractionMovement.current;
           if (canvasRef.current) {
             canvasRef.current.style.cursor = "grabbing";
           }
@@ -115,7 +132,7 @@ const CobeRotate: React.FC = () => {
           transition: "opacity 1s ease",
         }}
       />
-    </div>
+    </motion.div>
   );
 };
 

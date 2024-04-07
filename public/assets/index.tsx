@@ -7,3 +7,7 @@ export { default as BookoeImg } from "./Images/BookoeImg.png";
 export { default as ShoppingImg } from "./Images/ShoppingImg.png";
 export { default as SpotfiyImg } from "./Images/SpotfiyImg.png";
 export { default as InstagramImg } from "./Images/InstagramImg.png";
+
+
+// Logo
+export { default as Logo } from "./svgs/logo-color.svg";

@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
 import ReactQueryProvider from "@/query/reactQuerySetup";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           >
             <Header />
             {children}
+            <Footer />
             <Toaster visibleToasts={1} position="top-right"   />
           </ThemeProvider>
         </ReactQueryProvider>

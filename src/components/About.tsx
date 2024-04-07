@@ -6,10 +6,19 @@ import { SiSocialblade } from "react-icons/si";
 import Stacks from "./Stacks";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const itemVariants = {
+    offscreen: { opacity: 0, y: 50 },
+    onscreen: () => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9 },
+    }),
+  };
   return (
-    <div className="container mt-20">
+    <div className="container mt-20 overflow-hidden">
       <AnimatedCharacters
         className="text-4xl text-center font-bold"
         text="About Me"
@@ -23,7 +32,13 @@ const About = () => {
           </div>
           <Stacks />
         </div>
-        <div className="flex flex-col gap-6 border-[1px] xl:w-[500px] rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:p-6">
+        <motion.div
+          variants={itemVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.9 }}
+          className="flex flex-col gap-6 border-[1px] xl:w-[500px] rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:p-6"
+        >
           <div className="flex items-center gap-2">
             <SiSocialblade className="size-[18px]" />
             <h2 className="text-sm font-light">Bio</h2>
@@ -37,12 +52,12 @@ const About = () => {
             integration. My diverse project portfolio includes a Django-based
             book-selling platform and a comprehensive MERN stack food ordering
             service, demonstrating my adaptability and modern authentication
-            methods. Committed to lifelong learning and teamwork, I&apos;m poised to
-            innovate in the dynamic field of web development. If there&apos;s an
-            opportunity that aligns with my expertise, please don&apos;t hesitate to
-            reach out for a conversation.
+            methods. Committed to lifelong learning and teamwork, I&apos;m
+            poised to innovate in the dynamic field of web development. If
+            there&apos;s an opportunity that aligns with my expertise, please
+            don&apos;t hesitate to reach out for a conversation.
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="flex items-center justify-center mt-5">
         <Button className="font-bold">Know more about me</Button>

@@ -28,10 +28,25 @@ import {
   SiInsomnia,
   SiMongoose,
 } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const Stacks = () => {
+  const itemVariants = {
+    offscreen: { opacity: 0, y: 50 },
+    onscreen: () => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9 },
+    }),
+  };
   return (
-    <div className="flex h-max flex-col mt-5 border-[1px] gap-2 overflow-hidden rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:px-6">
+    <motion.div
+      variants={itemVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.9 }}
+      className="flex h-max flex-col mt-5 border-[1px] gap-2 overflow-hidden rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark lg:px-6"
+    >
       <div className="flex items-center gap-2">
         <ZapIcon className="text-lg" /> {/* Adjusted class name for sizing */}
         <h2 className="text-sm font-light">Stacks</h2>
@@ -100,7 +115,7 @@ const Stacks = () => {
           <SiMongoose className="text-4xl mr-10" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

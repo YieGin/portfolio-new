@@ -19,6 +19,7 @@ import { Textarea } from "./ui/textarea";
 import { useCreateContact } from "@/query/emailApi";
 import LoadingButton from "./LoadingButton";
 import CobeRotate from "./CobeRotate";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -42,8 +43,23 @@ const Contact = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     createRestaurant(values);
   };
+
+  const itemVariants = {
+    offscreen: { opacity: 0, x: -50 },
+    onscreen: () => ({
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    }),
+  };
   return (
-    <div className="container flex lg:flex-row flex-col mt-20 justify-between w-full">
+    <motion.div
+      variants={itemVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.5 }}
+      className="container flex lg:flex-row flex-col mt-20 justify-between w-full"
+    >
       <div className="flex flex-col lg:w-1/2 space-y-5">
         <p>Contact</p>
         <AnimatedCharacters
@@ -52,9 +68,9 @@ const Contact = () => {
           text="Get in touch"
         />
         <p className="font-light text-[0.9rem]">
-          Currently on the lookout for new professional challenges, I&lsquo;m eager to
-          engage in opportunities where I can contribute and grow. Feel free to
-          contact me I&lsquo;ll get back to you as soon as I can.
+          Currently on the lookout for new professional challenges, I&lsquo;m
+          eager to engage in opportunities where I can contribute and grow. Feel
+          free to contact me I&lsquo;ll get back to you as soon as I can.
         </p>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -69,8 +85,8 @@ const Contact = () => {
                       <Input placeholder="First Name" {...field} />
                     </FormControl>
                     <FormDescription>
-                      Please enter your first name as you&lsquo;d like me to address
-                      you in our correspondence.
+                      Please enter your first name as you&lsquo;d like me to
+                      address you in our correspondence.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -144,7 +160,7 @@ const Contact = () => {
         </Form>
       </div>
       <CobeRotate />
-    </div>
+    </motion.div>
   );
 };
 

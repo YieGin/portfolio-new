@@ -2,13 +2,22 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import { Alert, AlertDescription } from "./ui/alert";
 import { RocketIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
 import projectsList from "@/utlis/projectsList";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
+import { motion, useAnimation } from "framer-motion";
 
 const Projects = () => {
+  const itemVariants = {
+    offscreen: { opacity: 0, y: 50 },
+    onscreen: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: index * 0.4, duration: 0.5 },
+    }),
+  };
   return (
     <div className="container w-full">
       <AnimatedCharacters
@@ -19,7 +28,12 @@ const Projects = () => {
       <div className="flex items-center justify-center w-full">
         <div className="mt-12 grid xl:grid-cols-2 gap-5">
           {projectsList.map((study, index) => (
-            <div
+            <motion.div
+              variants={itemVariants}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+              custom={index}
               key={index}
               className="rounded-xl p-5 shadow-feature-card dark:shadow-feature-card-dark border-2 w-full"
             >
@@ -63,7 +77,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -40,7 +40,7 @@ const Experience = () => {
               text="Frontend Developer"
             />
             <AnimatedCharacters
-              className="font-bold mb-2"
+              className="font-bold mb-2 text-[0.9rem]"
               type="heading1"
               text="Metridash Â· Full-time"
             />
@@ -56,7 +56,7 @@ const Experience = () => {
               text="FullStack Developer"
             />
             <AnimatedCharacters
-              className="font-bold mb-2"
+              className="font-bold mb-2 text-[0.9rem]"
               type="heading1"
               text="Freelance on Upwork"
             />
@@ -120,7 +120,7 @@ const Experience = () => {
               text="Freelance Web Developer"
             />
             <AnimatedCharacters
-              className="font-bold mb-2"
+              className="font-bold mb-2 text-[0.9rem]"
               type="heading1"
               text="Fiverr Platform"
             />
@@ -136,10 +136,10 @@ const Experience = () => {
             <AnimatedCharacters
               className="font-bold"
               type="heading1"
-              text="Frontend Developer & Project Lead"
+              text="Project Lead"
             />
             <AnimatedCharacters
-              className="font-bold mb-2"
+              className="font-bold mb-2 text-[0.9rem]"
               type="heading1"
               text="MISS SAVAGE SP. Z O.O."
             />
@@ -158,7 +158,7 @@ const Experience = () => {
               text="Back-End Development Focus & Certification"
             />
             <AnimatedCharacters
-              className="font-bold mb-2"
+              className="font-bold mb-2 text-[0.9rem]"
               type="heading1"
               text="Continued Education"
             />

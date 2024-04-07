@@ -18,13 +18,15 @@ const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text, type, cla
   const ref = useRef<HTMLParagraphElement | HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    // A boolean flag to know if the component is still mounted.
     let isMounted = true;
   
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && isMounted) {
-          controls.start('visible');
+          // Wait for 2 seconds before starting the animation
+          setTimeout(() => {
+            controls.start('visible');
+          }, 200); // 2000 milliseconds = 2 seconds
         }
       },
       { root: null, threshold: 0.1 }

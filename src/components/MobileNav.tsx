@@ -8,6 +8,8 @@ import {
 } from "./ui/sheet";
 import MobileNavLinks from "./MobileNavLinks";
 import { Menu } from "lucide-react";
+import Image from "next/image";
+import { Logo } from "../../public/assets";
 
 const MobileNav = () => {
   return (
@@ -17,7 +19,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="space-y-3">
         <SheetDescription className="flex flex-col gap-4 font-Rubik">
-          <h1 className="text-2xl font-bold text-[#3ccabc] dark:text-[#00dac4]">Yie.com</h1>
+          <Image alt="Logo" width={25} height={25} src={Logo} />
           <MobileNavLinks />
         </SheetDescription>
       </SheetContent>

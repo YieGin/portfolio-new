@@ -4,6 +4,7 @@ import createGlobe from "cobe";
 import { MapPinIcon } from "lucide-react";
 import * as React from "react";
 import { useSpring } from "react-spring";
+import { motion } from "framer-motion";
 
 const LocationCard = () => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
@@ -61,8 +62,23 @@ const LocationCard = () => {
     };
   }, [r]);
 
+  const itemVariants = {
+    offscreen: { opacity: 0, x: -50 },
+    onscreen: () => ({
+      opacity: 1,
+      x: 0,
+      transition: {  duration: 0.5 },
+    }),
+  };
+
   return (
-    <div className="relative flex h-60 flex-col border-[1px] gap-6 overflow-hidden rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark md:w-1/2 xl:w-[500px] lg:p-6">
+    <motion.div
+      variants={itemVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.5 }}
+      className="relative flex h-60 flex-col border-[1px] gap-6 overflow-hidden rounded-xl p-4 shadow-feature-card dark:shadow-feature-card-dark md:w-1/2 xl:w-[500px] lg:p-6"
+    >
       <div className="flex gap-2">
         <MapPinIcon className="size-[18px]" />
         <h2 className="text-sm font-light">Algeria</h2>
@@ -133,7 +149,7 @@ const LocationCard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
