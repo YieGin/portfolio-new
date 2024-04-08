@@ -17,9 +17,9 @@ import { Button } from "./ui/button";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Textarea } from "./ui/textarea";
 import { useCreateContact } from "@/query/emailApi";
-import LoadingButton from "./LoadingButton";
 import CobeRotate from "./CobeRotate";
 import { motion } from "framer-motion";
+import LoadingButton from "@/utlis/LoadingButton";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
