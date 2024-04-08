@@ -1,7 +1,6 @@
 "use client";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import React from "react";
-import { SiIcons8 } from "react-icons/si";
 import { IoBag } from "react-icons/io5";
 import { TbBrandFiverr } from "react-icons/tb";
 import { IoBusiness } from "react-icons/io5";

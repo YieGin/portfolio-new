@@ -4,26 +4,29 @@ import { Profile } from "../../public/assets";
 
 const ProfileSection = () => {
   const name = "Islam Belamri";
-  const letters = name.split("").map(
-    (char, index) => (
-      <span key={index} className="inline-block mx-2">
-        {char}
-      </span>
-    )
-  );
+  const letters = name.split("").map((char, index) => (
+    <span key={index} className="inline-block mx-2">
+      {char}
+    </span>
+  ));
   return (
     <div>
-      <div className="flex container px-44 gap-10 relative">
-        <Image
-          className="rounded-md h-[500px] object-cover"
-          src={Profile}
-          alt="Profile"
-          width={400}
-          height={400}
-        />
-        <div className="w-2/3">
-          <h1 className="text-3xl font-bold">FullStack Developer</h1>
-          <p className="text-[0.9rem] text-muted-foreground mt-2">
+      <div className="flex lg:flex-row flex-col container xl:px-44 lg:px-32 gap-10 relative overflow-hidden">
+        <div className="lg:w-[40%] md:mr-5">
+          <Image
+            className="rounded-md h-[500px] object-cover"
+            src={Profile}
+            alt="Profile"
+            width={1000}
+            height={1000}
+          />
+        </div>
+        <div className="lg:w-2/3">
+          <h1 className="sm:text-3xl font-bold">FullStack Developer</h1>
+          <h1 className="sm:text-3xl font-bold md:hidden block">
+            Islam Belamri
+          </h1>
+          <p className="md:text-[0.9rem] text-[0.7rem] text-muted-foreground mt-2 md:mr-5">
             Since beginning my coding journey in 2021, I have honed my skills as
             a full stack developer through continuous learning and practical
             application. My foundational expertise started with front-end
@@ -48,17 +51,15 @@ const ProfileSection = () => {
             portfolio of full-stack projects includes a sophisticated food
             ordering website, crafted using Next.js, Tailwind CSS, Node.js,
             Express.js, and MongoDB, with Auth0 integration for secure user
-            authentication. Currently, I&apos;m dedicated to expanding my project
-            repertoire and embracing new challenges. As a fast learner and a
-            collaborative team player, I&apos;m always ready to explore and adapt to
-            new technologies, ensuring that my contributions are impactful andd
-            innovative.
+            authentication. Currently, I&apos;m dedicated to expanding my
+            project repertoire and embracing new challenges. As a fast learner
+            and a collaborative team player, I&apos;m always ready to explore
+            and adapt to new technologies, ensuring that my contributions are
+            impactful andd innovative.
           </p>
-          <h3 className="absolute -right-48 top-1/2 rotate-90 tracking-wide text-3xl font-Pacifico">
+          <h3 className="absolute -right-44 xl:-right-48 top-1/2 rotate-90 tracking-wide text-3xl font-Pacifico md:block hidden">
             {letters}
           </h3>
-          <p>Yooo</p>
-          <p>Yooo</p>
         </div>
       </div>
     </div>
