@@ -3,6 +3,7 @@ export { default as RolexImg } from "./Images/RolexImg.png";
 export { default as BiteZImg } from "./Images/BiteZImg.png";
 export { default as InpuctImg } from "./Images/InpuctImg.png";
 export { default as BookoeImg } from "./Images/BookoeImg.png";
+export { default as Profile } from "./Images/Profile.jpg";
 
 export { default as ShoppingImg } from "./Images/ShoppingImg.png";
 export { default as SpotfiyImg } from "./Images/SpotfiyImg.png";
