@@ -48,15 +48,17 @@ const ProfileSection = () => {
             portfolio of full-stack projects includes a sophisticated food
             ordering website, crafted using Next.js, Tailwind CSS, Node.js,
             Express.js, and MongoDB, with Auth0 integration for secure user
-            authentication. Currently, I'm dedicated to expanding my project
+            authentication. Currently, I&apos;m dedicated to expanding my project
             repertoire and embracing new challenges. As a fast learner and a
-            collaborative team player, I'm always ready to explore and adapt to
-            new technologies, ensuring that my contributions are impactful and
+            collaborative team player, I&apos;m always ready to explore and adapt to
+            new technologies, ensuring that my contributions are impactful andd
             innovative.
           </p>
           <h3 className="absolute -right-48 top-1/2 rotate-90 tracking-wide text-3xl font-Pacifico">
             {letters}
           </h3>
+          <p>Yooo</p>
+          <p>Yooo</p>
         </div>
       </div>
     </div>
