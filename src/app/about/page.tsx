@@ -1,11 +1,12 @@
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 import { GiHand } from "react-icons/gi";
-import ProfileSection from "@/components/ProfileSection";
 import { products } from "@/lib/constant";
 import { HeroParallax } from "@/components/connect-parallax";
-import Skills from "@/components/Skills";
-import Certification from "@/components/Certification";
+import ProfileSection from "@/components/Profile-Section";
+import SkillsSection from "@/components/Skills-Section";
+import CertificationSection from "@/components/Certification-Section";
+import ExperienceSection from "@/components/Experience-Section";
 
 const About = () => {
   
@@ -23,11 +24,13 @@ const About = () => {
       <Separator className="my-20" />
       <ProfileSection />
       <Separator className="my-20" />
+      <ExperienceSection />
+      <Separator className="my-20" />
       <HeroParallax products={products} />
       <Separator className="my-20" />
-      <Skills />
+      <SkillsSection />
       <Separator className="my-20" />
-      <Certification />
+      <CertificationSection />
     </div>
   );
 };

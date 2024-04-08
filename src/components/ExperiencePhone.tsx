@@ -1,6 +1,6 @@
 import React from "react";
 
-const experiences = [
+export const experiences = [
     {
       title: "Self-Led Learning",
       subtitle: "Continued Education",

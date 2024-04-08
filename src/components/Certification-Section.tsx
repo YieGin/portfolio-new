@@ -88,7 +88,7 @@ const certificationsSkills = [
   },
 ];
 
-const Certification = () => {
+const CertificationSection = () => {
   return (
     <div className="flex container flex-col lg:flex-row xl:px-44 lg:px-32 gap-10 justify-between">
       <div className="lg:w-1/2">
@@ -146,4 +146,4 @@ const Certification = () => {
   );
 };
 
-export default Certification;
+export default CertificationSection;
