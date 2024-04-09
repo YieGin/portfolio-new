@@ -12,7 +12,7 @@ const About = () => {
   
   return (
     <div className="mt-28 pb-20">
-      <div className="space-y-2 container lg:px-44">
+      <div className="space-y-2 container lg:px-48">
         <h1 className="text-5xl font-bold">About</h1>
         <div className="flex gap-1 items-center">
           <GiHand />

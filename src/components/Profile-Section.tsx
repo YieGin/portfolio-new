@@ -11,7 +11,7 @@ const ProfileSection = () => {
   ));
   return (
     <div>
-      <div className="flex lg:flex-row flex-col container xl:px-44 lg:px-32 gap-10 relative overflow-hidden">
+      <div className="flex lg:flex-row flex-col container xl:lg:px-48 lg:px-32 gap-10 relative overflow-hidden">
         <div className="lg:w-[40%] md:mr-5">
           <Image
             className="rounded-md h-[500px] object-cover"

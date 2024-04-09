@@ -13,12 +13,9 @@ import {
   SiMysql,
   SiGit,
   SiGithub,
-  SiVite,
-  SiVisualstudiocode,
   SiJest,
   SiNodedotjs,
   SiRedux,
-  SiJquery,
   SiHtml5,
   SiExpress,
   SiDjango,
@@ -29,7 +26,6 @@ import {
   SiReactquery,
   SiMongodb,
 } from "react-icons/si";
-import { DialogHeader, DialogTitle } from "./ui/dialog";
 import Link from "next/link";
 
 const links = [
@@ -146,7 +142,7 @@ const links = [
 
 const SkillsSection = () => {
   return (
-    <div className="flex container flex-col lg:flex-row xl:px-44 lg:px-32 gap-10 justify-between">
+    <div className="flex container flex-col lg:flex-row xl:lg:px-48 lg:px-32 gap-10 justify-between">
       <div className="lg:w-1/2">
         <h1 className="md:text-6xl text-4xl font-bold font-Rubik">My skills</h1>
         <p className="text-[0.9rem] mt-5 text-muted-foreground leading-7">

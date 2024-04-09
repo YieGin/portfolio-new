@@ -23,10 +23,9 @@ const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text, type, cla
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && isMounted) {
-          // Wait for 2 seconds before starting the animation
           setTimeout(() => {
             controls.start('visible');
-          }, 200); // 2000 milliseconds = 2 seconds
+          }, 200);
         }
       },
       { root: null, threshold: 0.1 }
@@ -53,12 +52,11 @@ const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text, type, cla
 
   const Tag = tagMap[type];
 
-  // Calculate a delay offset based on character index across the whole text
   let delayOffset = 0;
 
   return React.createElement(
     Tag,
-    { className, ref, style: { overflow: 'hidden' } }, // Apply overflow hidden to prevent word breaking due to container constraints
+    { className, ref, style: { overflow: 'hidden' } },
     text.split(' ').map((word, wordIndex) => {
       return (
         <React.Fragment key={wordIndex}>
@@ -71,7 +69,7 @@ const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text, type, cla
                   variants={item}
                   initial="hidden"
                   animate={controls}
-                  custom={totalIndex} // Stagger based on the total index across the full text
+                  custom={totalIndex}
                   style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
                 >
                   {char}
@@ -79,7 +77,6 @@ const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text, type, cla
               );
             })}
           </span>
-          {/* Add a non-breaking space after each word */}
           {wordIndex < text.length - 1 && <span style={{ whiteSpace: '' }}>&nbsp;</span>}
         </React.Fragment>
       );

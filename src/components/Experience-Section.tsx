@@ -5,7 +5,7 @@ import { experiences } from "./ExperiencePhone";
 
 const ExperienceSection = () => {
   return (
-    <div className="container xl:px-44 lg:px-32 gap-10">
+    <div className="container xl:lg:px-48 lg:px-32 gap-10">
       <AnimatedCharacters
         className="text-5xl text-center font-bold mb-10 font-Rubik"
         text="My Experience"
