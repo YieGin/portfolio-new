@@ -8,7 +8,7 @@ import SkillsSection from "@/components/Skills";
 import CertificationSection from "@/components/Certifications";
 import ExperienceSection from "@/components/Experience";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
-import { HeroParallax } from "@/components/Connect-parallax";
+import { HeroParallax } from "@/components/Parallax";
 
 const About = () => {
   
