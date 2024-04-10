@@ -38,11 +38,7 @@ const Experience = () => {
               type="heading1"
               text="Frontend Developer"
             />
-            <AnimatedCharacters
-              className="font-bold mb-2 text-[0.9rem]"
-              type="heading1"
-              text="Metridash Â· Full-time"
-            />
+            <h2 className="font-bold mb-2 text-[0.9rem]">Metridash Â· Full-time</h2>
             <p className="text-[0.8rem]">
               As my first job, I established a strong collaborative foundation
               creating websites using Next JS and React Native.
@@ -54,11 +50,7 @@ const Experience = () => {
               type="heading1"
               text="FullStack Developer"
             />
-            <AnimatedCharacters
-              className="font-bold mb-2 text-[0.9rem]"
-              type="heading1"
-              text="Freelance on Upwork"
-            />
+            <h2 className="font-bold mb-2 text-[0.9rem]">Freelance on Upwork</h2>
             <p className="text-[0.8rem]">
               My freelance journey continued on Upwork, where I crafted
               responsive e-commerce stores and templates, balancing
@@ -118,11 +110,7 @@ const Experience = () => {
               type="heading1"
               text="Freelance Web Developer"
             />
-            <AnimatedCharacters
-              className="font-bold mb-2 text-[0.9rem]"
-              type="heading1"
-              text="Fiverr Platform"
-            />
+            <h2 className="font-bold mb-2 text-[0.9rem]">Fiverr Platform</h2>
             <p className="text-[0.8rem]">
               In 2022, I leaped into freelancing on Fiverr, tackling a range of
               projects that tested my abilities and refined my skills. I
@@ -137,11 +125,7 @@ const Experience = () => {
               type="heading1"
               text="Project Lead"
             />
-            <AnimatedCharacters
-              className="font-bold mb-2 text-[0.9rem]"
-              type="heading1"
-              text="MISS SAVAGE SP. Z O.O."
-            />
+            <h2 className="font-bold mb-2 text-[0.9rem]">MISS SAVAGE SP. Z O.O.</h2>
             <p className="text-[0.8rem]">
               Taking on a role in Poland, I not only created engaging frontends
               but also led projects, coordinating with backend developers and
@@ -156,11 +140,7 @@ const Experience = () => {
               type="heading1"
               text="Back-End Development Focus & Certification"
             />
-            <AnimatedCharacters
-              className="font-bold mb-2 text-[0.9rem]"
-              type="heading1"
-              text="Continued Education"
-            />
+            <h2 className="font-bold mb-2 text-[0.9rem]">Continued Education</h2>
             <p className="text-[0.8rem]">
               In 2024, I committed to deepening my backend proficiency. Through
               comprehensive courses on Node.js and Python, I expanded my

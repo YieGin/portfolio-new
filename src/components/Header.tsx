@@ -1,10 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import TransitionLink from "./TransitionLink";
 import MainNav from "./MainNav";
 import { ModeToggle } from "@/utlis/ModeToggle";
 import MobileNav from "./MobileNav";
-import Image from "next/image";
 import { Logo } from "../../public/assets";
 
 const Header = () => {

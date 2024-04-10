@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-const HardwareSection = () => {
+const Hardware = () => {
 
   const itemVariants = {
     offscreen: { opacity: 0, y: 50 },
@@ -54,4 +54,4 @@ const HardwareSection = () => {
   );
 };
 
-export default HardwareSection;
+export default Hardware;

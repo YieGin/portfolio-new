@@ -140,7 +140,7 @@ const links = [
   },
 ];
 
-const SkillsSection = () => {
+const Skills = () => {
   return (
     <div className="flex container flex-col lg:flex-row xl:lg:px-48 lg:px-32 gap-10 justify-between">
       <div className="lg:w-1/2">
@@ -179,4 +179,4 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection;
+export default Skills;

@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import TransitionLink from "./TransitionLink";
 
-const HeroSection = () => {
+const Hero = () => {
   return (
     <section className="container py-10 lg:py-16 flex">
       <div className="grid grid-cols-1 sm:grid-cols-12 ">
@@ -63,4 +63,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;

@@ -3,7 +3,7 @@ import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import React from "react";
 import { experiences } from "./ExperiencePhone";
 
-const ExperienceSection = () => {
+const DetailedExperience = () => {
   return (
     <div className="container xl:lg:px-48 lg:px-32 gap-10">
       <AnimatedCharacters
@@ -31,4 +31,4 @@ const ExperienceSection = () => {
   );
 };
 
-export default ExperienceSection;
+export default DetailedExperience;

@@ -6,7 +6,6 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 import Link from "next/link";
 
 const certificationsSkills = [
@@ -88,7 +87,7 @@ const certificationsSkills = [
   },
 ];
 
-const CertificationSection = () => {
+const Certifications = () => {
   return (
     <div className="flex container flex-col lg:flex-row xl:lg:px-48 lg:px-32 gap-10 justify-between">
       <div className="lg:w-1/2">
@@ -146,4 +145,4 @@ const CertificationSection = () => {
   );
 };
 
-export default CertificationSection;
+export default Certifications;

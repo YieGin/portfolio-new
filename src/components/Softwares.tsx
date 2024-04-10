@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from "framer-motion";
 
-const SoftwaresSection = () => {
+const Softwares = () => {
 
   const itemVariants = {
     offscreen: { opacity: 0, y: 50 },
@@ -53,4 +53,4 @@ const SoftwaresSection = () => {
   )
 }
 
-export default SoftwaresSection
+export default Softwares

@@ -102,3 +102,25 @@
     @apply bg-background text-foreground;
   }
 }
+/* Add this to your global styles.css file */
+@layer components {
+  .spinning-ends::before,
+  .spinning-ends::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 12px; /* Size of the spinning circles */
+    height: 12px; /* Size of the spinning circles */
+    border: 2px solid #f3f4f6; /* Color of your line */
+    border-radius: 9999px; /* Fully rounded borders for circles */
+    transform: translate(-50%, -50%);
+  }
+
+  .spinning-ends::before {
+    left: 0;
+  }
+
+  .spinning-ends::after {
+    right: 0;
+  }
+}

@@ -35,7 +35,7 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import { motion } from "framer-motion";
-import AllStacks from "./AllStacks";
+import AllStacks from "./TechStackList";
 
 const Topicons = [
   SiHtml5,

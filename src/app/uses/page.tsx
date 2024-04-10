@@ -5,8 +5,8 @@ import Image from "next/image";
 import React from "react";
 import { PcImgTwo } from "../../../public/assets";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import HardwareSection from "@/components/Hardware-Section";
-import SoftwaresSection from "@/components/Softwares-Section";
+import HardwareSection from "@/components/Hardware";
+import SoftwaresSection from "@/components/Softwares";
 import { motion } from "framer-motion";
 
 const Uses = () => {

@@ -144,7 +144,7 @@ const links = [
   },
 ];
 
-const AllStacks = () => {
+const TechStackList = () => {
   return (
     <div>
       <DialogHeader>
@@ -169,4 +169,4 @@ const AllStacks = () => {
   );
 };
 
-export default AllStacks;
+export default TechStackList;

@@ -2,9 +2,9 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import TransitionLink from "./TransitionLink";
 
+
 const MainNav = () => {
   const pathname = usePathname();
-
   const isActive = (path: string) => pathname === path;
   return (
     <div>
