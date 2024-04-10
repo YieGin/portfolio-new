@@ -8,7 +8,7 @@ const MainNav = () => {
   const isActive = (path: string) => pathname === path;
   return (
     <div>
-      <ul className="flex gap-5">
+      <div className="flex gap-5">
         <TransitionLink
           href="/projects"
           className={`${
@@ -49,7 +49,7 @@ const MainNav = () => {
         >
           Uses
         </TransitionLink>
-      </ul>
+      </div>
     </div>
   );
 };

@@ -38,7 +38,7 @@ const Hero = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-[#ADB7BE] text-sm sm:text-lg mb-6 lg:text-xl">
             With a passion for creating seamless user experiences and a
             dedication to modern, clean design, I craft full-stack solutions
             that bring your digital visions to life. Let&apos;s build something great
