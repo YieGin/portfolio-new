@@ -3,12 +3,12 @@ import { Separator } from "@/components/ui/separator";
 import React from "react";
 import { GiHand } from "react-icons/gi";
 import { products } from "@/lib/constant";
-import { HeroParallax } from "@/components/Connect-parallax";
 import ProfileSection from "@/components/Profile";
 import SkillsSection from "@/components/Skills";
 import CertificationSection from "@/components/Certifications";
 import ExperienceSection from "@/components/Experience";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
+import { HeroParallax } from "@/components/Connect-parallax";
 
 const About = () => {
   
