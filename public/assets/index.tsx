@@ -53,6 +53,12 @@ export { default as discord } from "./Images/discord.png";
 export { default as vscode } from "./Images/vscode.png";
 
 // Projects
+export { default as BiteZHero } from "./Images/BiteZHero.jpg";
+export { default as InpuctHero } from "./Images/InpuctHero.jpg";
+export { default as VanguardEliteHero } from "./Images/VanguardEliteHero.jpg";
+export { default as BookoeHero } from "./Images/BookoeHero.jpg";
+
+// Projects
 export { default as ShoppingImg } from "./Images/ShoppingImg.png";
 export { default as SpotfiyImg } from "./Images/SpotfiyImg.png";
 export { default as InstagramImg } from "./Images/InstagramImg.png";
