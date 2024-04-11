@@ -215,8 +215,8 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <div className="flex gap-2 items-center font-bold text-white mt-2">
-        <PiCaretLeft className="h-6 w-6" />
+      <div className="flex gap-1 md:gap-2 items-center font-bold hover:text-[#00dac4] text-white mt-2">
+        <PiCaretLeft className="md:h-6 md:w-6 h-4 w-4" />
         <div className="bg-white rounded-full w-1 h-1" />
         <div className="bg-white rounded-full w-1 h-1" />
       </div>
@@ -246,10 +246,10 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <div className="flex gap-2 items-center font-bold text-white mt-2">
+      <div className="flex gap-1 md:gap-2 items-center font-bold text-white hover:text-[#00dac4] mt-2">
         <div className="bg-white rounded-full w-1 h-1" />
         <div className="bg-white rounded-full w-1 h-1" />
-        <PiCaretRight className="h-6 w-6" />
+        <PiCaretRight className="md:h-6 md:w-6 h-4 w-4" />
       </div>
       <span className="sr-only">Next slide</span>
     </button>
