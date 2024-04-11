@@ -52,19 +52,18 @@ const Projects = () => {
                   <div className="container md:w-[85%] relative flex md:flex-row flex-col md:items-center justify-center h-full xl:h-[80%] font-Roboto">
                     <div className="flex flex-col gap-2 md:gap-5 justify-center md:w-1/2 font-Rubik px-5 md:px-0">
                       <h1
-                        className="font-bold text-1xl lg:text-3xl relative 2xl:right-10 md:bottom-10 underline underline-offset-4"
+                        className="font-bold text-1xl lg:text-3xl text-white relative 2xl:right-10 md:bottom-10 underline underline-offset-4"
                         style={{ textDecorationColor: "#00dac4" }}
                       >
                         {project.subtitle}
                       </h1>
-
                       <h1 className="text-1xl text-[#e2e2e2] md:block hidden">
                         ABOUT
                       </h1>
-                      <h1 className="font-bold text-1xl lg:text-3xl">
+                      <h1 className="font-bold text-1xl lg:text-3xl text-white">
                         {(index + 1).toString().padStart(2, "0")}
                       </h1>
-                      <h1 className="font-bold text-1xl lg:text-3xl md:w-[90%]">
+                      <h1 className="font-bold text-1xl lg:text-3xl md:w-[90%] text-white">
                         {project.Summary}
                       </h1>
                     </div>
@@ -76,13 +75,13 @@ const Projects = () => {
                         <div className="relative flex flex-col items-center gap-5">
                           <div className="md:flex hidden flex-col gap-5 relative">
                             <Link target="_blank" href={project.codeLink}>
-                              <FaGithub className="text-3xl hover:text-[#00dac4]" />
+                              <FaGithub className="text-3xl text-white hover:text-[#00dac4]" />
                             </Link>
                             <Link target="_blank" href={project.websiteLink}>
-                              <GiLifeBuoy className="text-3xl hover:text-[#00dac4]" />
+                              <GiLifeBuoy className="text-3xl text-white hover:text-[#00dac4]" />
                             </Link>
-                            <Link target="_blank" href={project.websiteLink}>
-                              <FaYoutube className="text-3xl hover:text-[#00dac4]" />
+                            <Link target="_blank" href={project.youtubeLink}>
+                              <FaYoutube className="text-3xl text-white hover:text-[#00dac4]" />
                             </Link>
                           </div>
                         </div>
@@ -99,13 +98,13 @@ const Projects = () => {
                       </div>
                       <div className="flex md:hidden gap-5 relative">
                         <Link target="_blank" href={project.codeLink}>
-                          <FaGithub className="text-3xl hover:text-[#00dac4]" />
+                          <FaGithub className="text-3xl text-white hover:text-[#00dac4]" />
                         </Link>
                         <Link target="_blank" href={project.websiteLink}>
-                          <GiLifeBuoy className="text-3xl hover:text-[#00dac4]" />
+                          <GiLifeBuoy className="text-3xl text-white hover:text-[#00dac4]" />
                         </Link>
-                        <Link target="_blank" href={project.websiteLink}>
-                          <FaYoutube className="text-3xl hover:text-[#00dac4]" />
+                        <Link target="_blank" href={project.youtubeLink}>
+                          <FaYoutube className="text-3xl text-white hover:text-[#00dac4]" />
                         </Link>
                       </div>
                     </div>

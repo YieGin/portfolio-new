@@ -7,7 +7,7 @@ import { RocketIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
 import projectsList from "@/utlis/projectsList";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const itemVariants = {
@@ -47,13 +47,15 @@ const Projects = () => {
                       text={study.title}
                     />
                   </div>
-                  <Image
-                    src={study.imgSrc}
-                    width={5000}
-                    height={5000}
-                    alt={study.subtitle}
-                    className="rounded-md object-cover h-[300px] w-full"
-                  />
+                  <Link href={`/project/${study.subtitle}`}>
+                    <Image
+                      src={study.imgSrc}
+                      width={5000}
+                      height={5000}
+                      alt={study.subtitle}
+                      className="rounded-md object-cover h-[300px] w-full"
+                    />
+                  </Link>
                 </div>
                 <div className="md:w-1/2 md:mt-10 flex flex-col gap-y-3">
                   <AnimatedCharacters

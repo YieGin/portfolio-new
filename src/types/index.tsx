@@ -11,3 +11,18 @@ export type EmailTemplateParams = {
   lastName: string;
   body: string;
 };
+
+
+export type CaseStudy = {
+  imgSrc: any;
+  ProjectImg: any;
+  icon: React.ElementType;
+  title: string;
+  Summary: string;
+  subtitle: string;
+  description: string;
+  websiteLink: string;
+  youtubeLink: string;
+  codeLink: string;
+  skills: string[];
+}

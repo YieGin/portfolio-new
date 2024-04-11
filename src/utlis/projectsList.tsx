@@ -1,22 +1,7 @@
 import { BiteZHero, BiteZImg, BookoeHero, BookoeImg, InpuctHero, InpuctImg, VanguardEliteHero, VanguardEliteImg } from "../../public/assets";
 import { SiNextdotjs } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
-import React from "react";
-
-
-interface CaseStudy {
-  imgSrc: any;
-  ProjectImg: any;
-  icon: React.ElementType;
-  title: string;
-  Summary: string;
-  subtitle: string;
-  description: string;
-  websiteLink: string;
-  youtubeLink: string;
-  codeLink: string;
-  skills: string[];
-}
+import { CaseStudy } from "@/types";
 
 const projectsList: CaseStudy[] = [
   {
@@ -29,7 +14,7 @@ const projectsList: CaseStudy[] = [
     description:
       "This full-stack food ordering website is built with a modern technology stack that includes Next.js, Tailwind CSS, React Query, MongoDB, Node.js, and Express.js. It features a dual-theme interface, offering users the choice between dark and light modes to suit their preference. Designed to be fully responsive.",
     websiteLink: "https://mern-food-ordering-app-frontend-one.vercel.app",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/watch?v=0oQ3Mk-DtPk&ab_channel=Yie",
     codeLink: "https://github.com/YieGin/mern-food-ordering-app-frontend",
     skills: ["Next.js", "Tailwind css", "TypeScript", "Stripe", "Node js", "Express js", "ux/ui", "MongoDB", "Responsive Design", "Auth0", "React Query"],
   },
@@ -71,9 +56,9 @@ const projectsList: CaseStudy[] = [
     description:
       "I created this book e-commerce website to showcase my skills, utilizing Next.js, Tailwind CSS, and TypeScript for the frontend. For the backend, I employed Python, Django, and SQLite, with JWT tokens and HttpOnly cookies to enhance security. This combination of technologies allowed me to build a secure, efficient, and user-friendly platform for selling books online.",
     websiteLink: "https://bookoe-jade.vercel.app",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/watch?v=eeapSG7OqzI&ab_channel=Yie",
     codeLink: "https://github.com/YieGin/Bookoe",
-    skills: ["Next js", "Tailwind css", "TypeScript", "Responsive Design", "Python", "Django", "SQLite", "JWT tokens", "ui/ux", "JWT"],
+    skills: ["Next js", "Tailwind css", "TypeScript", "ui/ux", "Responsive Design", "Python", "Django", "SQLite", "JWT tokens", "Redux", "JWT"],
   },
 ];
 
