@@ -3,11 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import type { CaseStudy } from "@/types";
 import projectsList from "@/utlis/projectsList";
-import { GiHand } from "react-icons/gi";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { MdArrowOutward } from "react-icons/md";
 
@@ -61,7 +59,7 @@ const ProjectPage = () => {
         <p className="w-[90%] text-muted-foreground mt-5">
           {project.description}
         </p>
-        <div className="flex gap-5 mt-5">
+        <div className="flex flex-wrap gap-2 sm:gap-5 mt-5">
           <Button className="flex gap-1">
             <p>Visit Website</p> <MdArrowOutward />
           </Button>
