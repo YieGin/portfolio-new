@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
 import ReactQueryProvider from "@/query/reactQuerySetup";
 import Footer from "@/components/Footer";
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      
         <ReactQueryProvider>
+        <UserProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -35,6 +38,8 @@ export default function RootLayout({
             <Footer />
             <Toaster visibleToasts={1} position="top-right"   />
           </ThemeProvider>
+          </UserProvider>
+
         </ReactQueryProvider>
       </body>
     </html>

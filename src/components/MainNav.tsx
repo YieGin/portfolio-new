@@ -49,6 +49,16 @@ const MainNav = () => {
         >
           Uses
         </TransitionLink>
+        <TransitionLink
+          href="/guestbook"
+          className={`${
+            isActive("/guestbook")
+              ? "text-[#000] dark:text-white"
+              : "text-foreground/60 transition-colors"
+          } text-[0.8rem] md:text-[1rem] font-medium text`}
+        >
+          Guestbook
+        </TransitionLink>
       </div>
     </div>
   );

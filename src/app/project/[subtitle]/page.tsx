@@ -59,7 +59,7 @@ const ProjectPage = () => {
         <p className="w-[90%] text-muted-foreground mt-5">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2 sm:gap-5 mt-5">
+        <div className="flex gap-5 mt-5">
           <Button className="flex gap-1">
             <p>Visit Website</p> <MdArrowOutward />
           </Button>
