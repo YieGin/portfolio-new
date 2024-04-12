@@ -30,7 +30,7 @@ const Guestbook = () => {
         <div className="flex flex-col gap-5 w-1/2 border-[1px] h-full p-5 rounded-lg">
           <h1 className="text-3xl font-bold">Pinned</h1>
           <p className="text-muted-foreground">
-            Hey there! Thanks for visiting my website. If you have a moment, I'd
+            Hey there! Thanks for visiting my website. If you have a moment, I&apos;d
             love to hear your thoughts on my work. Please log in with your
             account to leave a comment. Thanks!
           </p>
