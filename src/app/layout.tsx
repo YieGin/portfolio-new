@@ -7,7 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
 import ReactQueryProvider from "@/query/reactQuerySetup";
 import Footer from "@/components/Footer";
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import Auth0ProviderWithNavigate from "@/auth/Auth0ProviderWithNavigate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,22 +24,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      
         <ReactQueryProvider>
-        <UserProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-            <Footer />
-            <Toaster visibleToasts={1} position="top-right"   />
-          </ThemeProvider>
-          </UserProvider>
-
+          <Auth0ProviderWithNavigate>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Header />
+              {children}
+              <Footer />
+              <Toaster visibleToasts={1} position="top-right" />
+            </ThemeProvider>
+          </Auth0ProviderWithNavigate>
         </ReactQueryProvider>
       </body>
     </html>
