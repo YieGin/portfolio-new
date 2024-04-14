@@ -1,7 +1,6 @@
 "use client"
 import React from "react";
 import { AppState, Auth0Provider, User } from "@auth0/auth0-react";
-import { useCreateUser } from "@/query/userApi";
 import { useRouter } from "next/navigation";
 
 type Props = {

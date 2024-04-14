@@ -12,6 +12,9 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
   },
+  image: { 
+    type: String 
+  }
 });
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);
