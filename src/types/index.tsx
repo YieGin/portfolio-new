@@ -26,3 +26,8 @@ export type CaseStudy = {
   codeLink: string;
   skills: string[];
 }
+
+import { NextRequest, NextResponse } from "next/server";
+
+export type CombinedRequest =  NextRequest;
+export type CombinedResponse = NextResponse;

@@ -1,20 +1,17 @@
-// POST handler for reviews
 import connectMongo from "@/lib/mongodb";
 import Reviews from "@/models/reviews";
 import User from "@/models/user";
-import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextApiRequest) {
-  const body = await new Response(req.body).json();
+export const POST = async (req: NextRequest) => {
+  const { message, user: auth0Id, name, email, image } = await req.json();
   await connectMongo();
-  const { message, user: auth0Id, name, email, image } = body;
 
   if (!message || !auth0Id) {
     console.log("Missing fields", { message, auth0Id });
-    return NextResponse.json({
+    return new NextResponse(JSON.stringify({
       message: "Missing required fields: user, message",
-    });
+    }), { status: 400 });
   }
 
   try {
@@ -30,14 +27,16 @@ export async function POST(req: NextApiRequest) {
     });
 
     const savedReview = await newReview.save();
-    return NextResponse.json(savedReview, { status: 201 });
+    return new NextResponse(JSON.stringify(savedReview), { status: 201 });
   } catch (err) {
     console.error("Error in saving review:", err);
-    return NextResponse.json({ message: "Error creating review", error: err });
+    return new NextResponse(JSON.stringify({
+      message: "Error creating review", error: err
+    }), { status: 500 });
   }
-}
+};
 
-export async function GET(req: NextApiRequest) {
+export const GET = async (req: NextRequest) => {
   await connectMongo();
 
   try {
@@ -46,9 +45,8 @@ export async function GET(req: NextApiRequest) {
   } catch (err) {
     console.error("Error retrieving reviews:", err);
     return NextResponse.json({
-      message: "Failed to retrieve reviews",
-      error: err,
-    });
+      message: "Failed to retrieve reviews", error: err
+    }, { status: 500 });
   }
-}
+};
 
