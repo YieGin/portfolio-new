@@ -5,7 +5,7 @@ import ContactImage from "./ContactImage";
 
 const Contact = () => {
   return (
-    <div className="container flex md:flex-row flex-col mt-20 justify-between w-full gap-10">
+    <div className="container flex md:flex-row flex-col mt-20 justify-between w-full gap-10 overflow-hidden">
       <FormSection />
       <ContactImage />
     </div>
