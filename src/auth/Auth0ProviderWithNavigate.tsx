@@ -15,12 +15,13 @@ const Auth0ProviderWithNavigate = ({ children }: Props) => {
   const redirectUri = process.env.NEXT_PUBLIC_AUTH0_CALLBACK_URL;
 
   if (!domain || !clientId || !redirectUri) {
-    throw new Error("unable to initialise auth");
+    throw new Error("Unable to initialise Auth0 - check environment variables");
   }
 
-  const onRedirectCallback = (appState?: AppState, user?: User) => {
-    navigate.push("/auth-callback");
+  const onRedirectCallback = (appState?: AppState) => {
+    navigate.push(appState?.returnTo || "/auth-callback");
   };
+
   return (
     <Auth0Provider
       domain={domain}

@@ -12,14 +12,17 @@ export type Review = {
   email: string;
   name: string;
   image: string;
+  auth0Id: string;
 };
 
 interface ReviewResponse {
   _id: string;
   user: {
+    sub?: string;
     name: string;
     email: string;
     image: string;
+    auth0Id: string;
   };
   message: string;
 }
@@ -100,19 +103,51 @@ export const useCreateReview = () => {
   };
 
   return useMutation<ReviewResponse, Error, Review>(createReview, {
-    onSuccess: (newReview, variables) => {
-      // Now 'variables' contains the 'review' that was used in the mutation
-      queryClient.setQueryData<ReviewResponse[]>("reviews", (oldReviews = []) => [
+    onSuccess: (newReview) => {
+      queryClient.setQueryData<ReviewResponse[]>('reviews', (oldReviews = []) => [
         ...oldReviews,
         {
           ...newReview,
-          user: {
-            name: newReview.user.name || variables.name, // Use the 'variables' context to access the original review data
-            email: newReview.user.email || variables.email,
-            image: newReview.user.image || variables.image
+          user: {  // Ensure this structure matches what your component expects
+            ...newReview.user,
+            name: newReview.user.name,
+            email: newReview.user.email,
+            image: newReview.user.image,
+            auth0Id: newReview.user.auth0Id,
           },
-        },
+        }
       ]);
+      // Optionally refetch the reviews query to ensure it's up to date
+      queryClient.invalidateQueries('reviews');
+    },
+  });
+};
+
+
+export const useDeleteReview = () => {
+  const { getAccessTokenSilently } = useAuth0();
+  const queryClient = useQueryClient();
+
+  const deleteReview = async (reviewId: string) => {
+    const accessToken = await getAccessTokenSilently();
+
+    const response = await fetch(`/api/review/${reviewId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete review");
+    }
+
+    return response.json();
+  };
+
+  return useMutation<void, Error, string>(deleteReview, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("reviews");
     },
   });
 };

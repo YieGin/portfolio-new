@@ -17,8 +17,7 @@ export async function sendMail({
   });
 
   try {
-    const testResult = await transport.verify();
-    console.log('Connection to SMTP server verified:', testResult);
+    await transport.verify();
   } catch (err) {
     console.error('Error verifying SMTP server connection:', err);
     return;
@@ -26,13 +25,12 @@ export async function sendMail({
 
   try {
     const emailHTML = getEmailTemplate({ from, firstName, lastName, body });
-    const sendResult = await transport.sendMail({
+    await transport.sendMail({
       from: from,
       to: process.env.SMTP_EMAIL,
       replyTo: from,
       html: emailHTML
     });
-    console.log('Email sent successfully:', sendResult);
   } catch (err) {
     console.error('Error sending email:', err);
   }

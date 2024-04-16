@@ -40,7 +40,7 @@ export const GET = async (req: NextRequest) => {
   await connectMongo();
 
   try {
-    const reviews = await Reviews.find({}).populate("user", "email name image");
+    const reviews = await Reviews.find({}).populate("user", "auth0Id email name image");
     return NextResponse.json(reviews, { status: 200 });
   } catch (err) {
     console.error("Error retrieving reviews:", err);
