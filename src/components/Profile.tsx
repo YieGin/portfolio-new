@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Profile } from "../../public/assets";
+import { P5, Profile } from "../../public/assets";
 
 const ProfileSection = () => {
   const name = "Islam Belamri";
@@ -15,7 +15,7 @@ const ProfileSection = () => {
         <div className="lg:w-[40%] md:mr-5">
           <Image
             className="rounded-md h-[500px] object-cover"
-            src={Profile}
+            src={P5}
             alt="Profile"
             width={1000}
             height={1000}

@@ -19,7 +19,6 @@ export { default as P4 } from "./Images/p4.jpg";
 export { default as P5 } from "./Images/p5.jpg";
 export { default as P6 } from "./Images/p6.jpg";
 export { default as P7 } from "./Images/p7.png";
-export { default as P8 } from "./Images/p8.jpg";
 
 // HardwareList
 export { default as Case } from "./Images/Case.jpg";

@@ -3,28 +3,27 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 
 type CreateUserRequest = {
   auth0Id: string;
-  email: string;
 };
 
-export type Review = {
+export type ReviewType = {
   user: string;
   message: string;
-  email: string;
+  formattedDate?: string;
   name: string;
   image: string;
   auth0Id: string;
 };
 
-interface ReviewResponse {
+export type ReviewResponse = {
   _id: string;
   user: {
     sub?: string;
     name: string;
-    email: string;
     image: string;
     auth0Id: string;
   };
   message: string;
+  formattedDate: string;
 }
 
 export const useCreateUser = () => {
@@ -83,7 +82,7 @@ export const useCreateReview = () => {
   const { getAccessTokenSilently } = useAuth0();
   const queryClient = useQueryClient();
 
-  const createReview = async (review: Review): Promise<ReviewResponse> => {
+  const createReview = async (review: ReviewType): Promise<ReviewResponse> => {
     const accessToken = await getAccessTokenSilently();
 
     const response = await fetch("/api/review", {
@@ -102,7 +101,7 @@ export const useCreateReview = () => {
     return response.json();
   };
 
-  return useMutation<ReviewResponse, Error, Review>(createReview, {
+  return useMutation<ReviewResponse, Error, ReviewType>(createReview, {
     onSuccess: (newReview) => {
       queryClient.setQueryData<ReviewResponse[]>('reviews', (oldReviews = []) => [
         ...oldReviews,
@@ -111,7 +110,6 @@ export const useCreateReview = () => {
           user: {  // Ensure this structure matches what your component expects
             ...newReview.user,
             name: newReview.user.name,
-            email: newReview.user.email,
             image: newReview.user.image,
             auth0Id: newReview.user.auth0Id,
           },
@@ -122,7 +120,6 @@ export const useCreateReview = () => {
     },
   });
 };
-
 
 export const useDeleteReview = () => {
   const { getAccessTokenSilently } = useAuth0();

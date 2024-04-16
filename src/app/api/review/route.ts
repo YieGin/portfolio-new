@@ -4,7 +4,7 @@ import User from "@/models/user";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: NextRequest) => {
-  const { message, user: auth0Id, name, email, image } = await req.json();
+  const { message, createdAt, user: auth0Id, name, email, image } = await req.json();
   await connectMongo();
 
   if (!message || !auth0Id) {
@@ -24,8 +24,8 @@ export const POST = async (req: NextRequest) => {
     const newReview = new Reviews({
       user: user._id,
       message,
-    });
-
+      createdAt,
+    });    
     const savedReview = await newReview.save();
     return new NextResponse(JSON.stringify(savedReview), { status: 201 });
   } catch (err) {

@@ -11,8 +11,6 @@ export const DELETE = async (req: NextRequest) => {
   try {
     await connectMongo();
     const deletedReview = await Reviews.findByIdAndDelete(reviewId);
-    console.log(deletedReview);
-
     if (!deletedReview) {
       return new NextResponse(JSON.stringify({ message: "Review not found" }), { status: 404 });
     }

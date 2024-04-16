@@ -19,7 +19,6 @@ import {
   P5,
   P6,
   P7,
-  P8,
   Power,
   anydo,
   apps,
@@ -58,9 +57,6 @@ export const products = [
   {
     thumbnail: P7,
   },
-  {
-    thumbnail: P8,
-  },
 
   {
     thumbnail: P1,
@@ -83,9 +79,6 @@ export const products = [
   {
     thumbnail: P7,
   },
-  {
-    thumbnail: P8,
-  },
 
   {
     thumbnail: P1,
@@ -107,9 +100,6 @@ export const products = [
   },
   {
     thumbnail: P7,
-  },
-  {
-    thumbnail: P8,
   },
 ];
 

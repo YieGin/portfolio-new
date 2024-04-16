@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+import { GiChainedHeart } from "react-icons/gi";
 
 const WriteReview = () => {
   const { mutateAsync: createReview } = useCreateReview();
@@ -39,23 +40,27 @@ const WriteReview = () => {
       alert("Failed to submit review");
     }
   };
-  
+
   return (
-    <div className="container xl:lg:px-48 lg:px-32">
-      <div className="flex flex-col gap-5 w-1/2 border-[1px] h-full p-5 rounded-lg">
-        <h1 className="text-3xl font-bold">Pinned</h1>
-        <p className="text-muted-foreground">
-          Hey there! Thanks for visiting my website. If you have a moment,
-          I&apos;d love to hear your thoughts on my work. Please log in with
-          your account to leave a comment. Thanks!
+    <div className="container xl:lg:px-48 lg:px-32 space-y-10 flex md:items-center flex-col">
+      <div className="flex flex-col gap-5 lg:w-2/3 border-[1px] h-full p-5 rounded-lg">
+        <h1 className="md:text-2xl font-bold flex items-center gap-2">Share Your Feedback <GiChainedHeart className="text-red-400" /></h1>
+        <p className="text-muted-foreground text-[0.8rem] md:text-[1rem]">
+          Welcome to my digital portfolio! I&apos;m thrilled to have you here. Your
+          feedback is invaluable to me as I strive to improve and evolve
+          professionally. If you could spare a moment, please log in and share
+          your thoughts on my projects and presentations. Your insights not only
+          help me grow but also refine my creative expression. Thank you for
+          taking the time to contribute to my journey!
         </p>
       </div>
-      <div className="flex gap-5 w-1/2">
+
+      <div className="flex gap-5 md:w-2/3">
         {isAuthenticated ? (
-          <div className="w-full mt-10">
+          <div className="w-full">
             <div className="flex gap-2">
               <img
-                className="rounded-full w-14 h-14"
+                className="rounded-full w-10 h-10"
                 src={user?.picture}
                 alt={user?.name}
               />
@@ -66,24 +71,27 @@ const WriteReview = () => {
                   className=""
                   placeholder="Type your message here."
                 />
+                <div className="flex gap-2 float-right mt-2">
+                  <Button
+                    className="w-max p-2 md:p-4"
+                    onClick={async () => await logout()}
+                  >
+                    Log Out
+                  </Button>
+                  <Button
+                    className="w-max p-2 md:p-4 bg-[#1a6961] text-white hover:bg-[#3cb3a7]"
+                    onClick={handleReviewSubmit}
+                  >
+                    Submit
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-2 float-right mt-2">
-              <Button className="w-max" onClick={async () => await logout()}>
-                Log Out
-              </Button>
-              <Button
-                className="w-max bg-[#1a6961] text-white hover:bg-[#3cb3a7]"
-                onClick={handleReviewSubmit}
-              >
-                Submit
-              </Button>
             </div>
           </div>
         ) : (
           <div className="ml-auto mt-2">
             <Button
-              className="w-max"
+              className="w-max p-2 md:p-4"
               onClick={async () => await loginWithRedirect()}
             >
               Login

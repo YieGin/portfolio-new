@@ -12,7 +12,6 @@ export type EmailTemplateParams = {
   body: string;
 };
 
-
 export type CaseStudy = {
   imgSrc: any;
   ProjectImg: any;
