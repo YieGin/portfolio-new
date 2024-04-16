@@ -8,7 +8,6 @@ export const POST = async (req: NextRequest) => {
   await connectMongo();
 
   if (!message || !auth0Id) {
-    console.log("Missing fields", { message, auth0Id });
     return new NextResponse(JSON.stringify({
       message: "Missing required fields: user, message",
     }), { status: 400 });
@@ -20,6 +19,13 @@ export const POST = async (req: NextRequest) => {
       { auth0Id, name, email, image },
       { new: true, upsert: true }
     );
+
+    const existingReview = await Reviews.findOne({ user: user._id });
+    if (existingReview) {
+      return new NextResponse(JSON.stringify({
+        message: "You have already submitted a review."
+      }), { status: 403 });
+    }
 
     const newReview = new Reviews({
       user: user._id,

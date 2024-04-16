@@ -5,9 +5,10 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { GiChainedHeart } from "react-icons/gi";
 import { toast } from "sonner";
+import LoadingButton from "@/utlis/LoadingButton";
 
 const WriteReview = () => {
-  const { mutateAsync: createReview } = useCreateReview();
+  const { mutateAsync: createReview, isLoading } = useCreateReview();
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
 
   const handleReviewSubmit = async () => {
@@ -38,17 +39,21 @@ const WriteReview = () => {
       reviewElement.value = "";
     } catch (err) {
       console.error(err);
-      toast.error("Failed to submit review");
+      toast.error(
+        "You have already submitted a review. You cannot submit more than one."
+      );
     }
   };
 
   return (
     <div className="container xl:lg:px-48 lg:px-32 space-y-10 flex md:items-center flex-col">
       <div className="flex flex-col gap-5 lg:w-2/3 border-[1px] h-full p-5 rounded-lg">
-        <h1 className="md:text-2xl font-bold flex items-center gap-2">Share Your Feedback <GiChainedHeart className="text-red-400" /></h1>
+        <h1 className="md:text-2xl font-bold flex items-center gap-2">
+          Share Your Feedback <GiChainedHeart className="text-red-400" />
+        </h1>
         <p className="text-muted-foreground text-[0.8rem] md:text-[1rem]">
-          Welcome to my digital portfolio! I&apos;m thrilled to have you here. Your
-          feedback is invaluable to me as I strive to improve and evolve
+          Welcome to my digital portfolio! I&apos;m thrilled to have you here.
+          Your feedback is invaluable to me as I strive to improve and evolve
           professionally. If you could spare a moment, please log in and share
           your thoughts on my projects and presentations. Your insights not only
           help me grow but also refine my creative expression. Thank you for
@@ -66,7 +71,7 @@ const WriteReview = () => {
                 alt={user?.name}
               />
               <div className="w-full space-y-2">
-                <p className="text-muted-foreground">{user?.name}</p>
+                <p className="font-semibold">{user?.name}</p>
                 <Textarea
                   id="reviewTextarea"
                   className=""
@@ -74,29 +79,37 @@ const WriteReview = () => {
                 />
                 <div className="flex gap-2 float-right mt-2">
                   <Button
-                    className="w-max p-2 md:p-4"
+                    className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white"
                     onClick={async () => await logout()}
                   >
                     Log Out
                   </Button>
-                  <Button
-                    className="w-max p-2 md:p-4 bg-[#1a6961] text-white hover:bg-[#3cb3a7]"
-                    onClick={handleReviewSubmit}
-                  >
-                    Submit
-                  </Button>
+                  {isLoading ? (
+                    <LoadingButton />
+                  ) : (
+                    <Button
+                      className="w-max p-2 md:p-4"
+                      onClick={handleReviewSubmit}
+                    >
+                      Submit
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         ) : (
           <div className="ml-auto mt-2">
-            <Button
-              className="w-max p-2 md:p-4"
-              onClick={async () => await loginWithRedirect()}
-            >
-              Login
-            </Button>
+            {isLoading ? (
+              <LoadingButton />
+            ) : (
+              <Button
+                className="w-max p-2 md:p-4"
+                onClick={async () => await loginWithRedirect()}
+              >
+                Login
+              </Button>
+            )}
           </div>
         )}
       </div>
