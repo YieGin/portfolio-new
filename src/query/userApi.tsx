@@ -148,3 +148,33 @@ export const useDeleteReview = () => {
     },
   });
 };
+
+export const useUpdateReview = () => {
+  const { getAccessTokenSilently } = useAuth0();
+  const queryClient = useQueryClient();
+
+  const updateReview = async ({ reviewId, reviewData }: { reviewId: string; reviewData: ReviewType }) => {
+    const accessToken = await getAccessTokenSilently();
+    const response = await fetch(`/api/review/${reviewId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(reviewData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to update review");
+    }
+
+    return response.json();
+  };
+
+  return useMutation(updateReview, {
+    onSuccess: () => {
+      // Re-fetching all reviews to update the list
+      queryClient.invalidateQueries("reviews");
+    },
+  });
+};

@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { GiChainedHeart } from "react-icons/gi";
+import { toast } from "sonner";
 
 const WriteReview = () => {
   const { mutateAsync: createReview } = useCreateReview();
@@ -11,14 +12,14 @@ const WriteReview = () => {
 
   const handleReviewSubmit = async () => {
     if (!isAuthenticated || !user) {
-      alert("You need to be logged in to submit a review!");
+      toast.error("You need to be logged in to submit a review!");
       return;
     }
     const reviewElement = document.getElementById(
       "reviewTextarea"
     ) as HTMLTextAreaElement | null;
     if (!reviewElement || !reviewElement.value) {
-      alert("No review text found!");
+      toast.error("No review text found!");
       return;
     }
 
@@ -33,11 +34,11 @@ const WriteReview = () => {
 
     try {
       await createReview(review);
-      alert("Review submitted successfully!");
+      toast.success("Review submitted successfully!");
       reviewElement.value = "";
     } catch (err) {
       console.error(err);
-      alert("Failed to submit review");
+      toast.error("Failed to submit review");
     }
   };
 

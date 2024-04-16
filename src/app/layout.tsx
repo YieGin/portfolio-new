@@ -34,8 +34,8 @@ export default function RootLayout({
             >
               <Header />
               {children}
+              <Toaster visibleToasts={1} position="bottom-right" richColors />
               <Footer />
-              <Toaster visibleToasts={1} position="top-right" />
             </ThemeProvider>
           </Auth0ProviderWithNavigate>
         </ReactQueryProvider>
