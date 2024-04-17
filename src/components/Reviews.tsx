@@ -76,10 +76,16 @@ const ReviewsSection = () => {
     );
   if (isError) return <span>Error: {error?.message}</span>;
 
+  const sortedReviews = reviews?.slice().sort((a, b) => {
+    const dateA = a.createdAt ? new Date(a.createdAt).getTime() : Number.MAX_SAFE_INTEGER;
+    const dateB = b.createdAt ? new Date(b.createdAt).getTime() : Number.MAX_SAFE_INTEGER;
+    return dateB - dateA;
+  });
+
   return (
     <div className="container xl:lg:px-48 lg:px-32 mt-10 flex md:items-center flex-col">
       <div className="flex flex-col gap-y-5 md:w-2/3">
-        {reviews?.map((review) => (
+        {sortedReviews?.map((review) => (
           <div key={review._id} className="border-[1px] p-5 rounded-md w-full">
             <div className="flex gap-2">
               <img

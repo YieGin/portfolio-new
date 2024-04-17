@@ -14,6 +14,7 @@ export type ReviewType = {
   name: string;
   image: string;
   auth0Id: string;
+  createdAt?: string;
 };
 
 export type ReviewResponse = {
@@ -27,6 +28,7 @@ export type ReviewResponse = {
   message: string;
   rating?: number;
   formattedDate: string;
+  createdAt?: string;
 }
 
 export const useCreateUser = () => {
