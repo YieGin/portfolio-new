@@ -16,8 +16,8 @@ const Header = () => {
       <TransitionLink href={"/"}>
         <Logo
           className={`${
-            isActive("/projects") ? "text-[#fff]" : ""
-          } dark:text-white text-black w-[50px] h-[40px]`}
+            isActive("/projects") ? "text-[#fff]" : "text-[#000]"
+          } dark:text-white w-[50px] h-[40px]`}
         />
       </TransitionLink>
       <div className="hidden lg:flex items-center gap-2">
