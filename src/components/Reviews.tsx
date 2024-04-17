@@ -12,6 +12,8 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import LoadingButton from "@/utlis/LoadingButton";
+import { Loader } from "lucide-react";
+import StarDisplay from "./StarDisplay";
 
 const ReviewsSection = () => {
   const { data: reviews, isError, error, isLoading } = useFetchReviews();
@@ -20,13 +22,10 @@ const ReviewsSection = () => {
   const updateReview = useUpdateReview();
   const [editMessage, setEditMessage] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [showEditDialog, setShowEditDialog] = useState(false);
-  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   const handleEditClick = (reviewId: string, currentMessage: string) => {
     setEditingId(reviewId);
     setEditMessage(currentMessage);
-    setShowEditDialog(true);
   };
 
   const handleReviewDelete = async (reviewId: string) => {
@@ -40,7 +39,6 @@ const ReviewsSection = () => {
   };
 
   const handleReviewUpdate = async (reviewId: string) => {
-    setShowEditDialog(false);
     if (!reviews || !user?.sub) {
       toast.error("User not logged in or reviews not loaded");
       return;
@@ -70,7 +68,12 @@ const ReviewsSection = () => {
     }
   };
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader className="animate-spin" size={48} />
+      </div>
+    );
   if (isError) return <span>Error: {error?.message}</span>;
 
   return (
@@ -87,49 +90,45 @@ const ReviewsSection = () => {
               <div className="w-full">
                 <p className="text-[0.9rem]">{review.user.name}</p>
                 <p className="text-[0.9rem]">{review.formattedDate}</p>
+                <StarDisplay rating={review.rating} />
               </div>
             </div>
             {editingId !== review._id && (
               <p className="text-muted-foreground my-2">{review.message}</p>
             )}
             {isAuthenticated && user && user.sub === review.user.auth0Id && (
-              <div className="flex gap-5 float-right">
+              <div className="flex gap-2 float-right">
                 <Dialog>
                   <DialogTrigger asChild>
                     {isLoading ? (
                       <LoadingButton />
                     ) : (
-                      <Button
-                        className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white"
-                        onClick={() => setShowDeleteDialog(true)}
-                      >
+                      <Button className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white">
                         Delete
                       </Button>
                     )}
                   </DialogTrigger>
-                  {showDeleteDialog && (
-                    <DialogContent className="md:max-w-[550px]">
-                      <div className="flex flex-col gap-5">
-                        <h1 className="text-2xl font-bold">Remove a Comment</h1>
-                        <p className="text-muted-foreground">
-                          Do you really want to remove this comment? Keep in
-                          mind, this can&apos;t be reversed.
-                        </p>
-                        <div>
-                          {isLoading ? (
-                            <LoadingButton />
-                          ) : (
-                            <Button
-                              className="bg-red-500 hover:bg-red-600 text-white w-max p-2 md:p-4 float-right"
-                              onClick={() => handleReviewDelete(review._id)}
-                            >
-                              Delete
-                            </Button>
-                          )}
-                        </div>
+                  <DialogContent className="md:max-w-[550px]">
+                    <div className="flex flex-col gap-5">
+                      <h1 className="text-2xl font-bold">Remove a Comment</h1>
+                      <p className="text-muted-foreground">
+                        Do you really want to remove this comment? Keep in mind,
+                        this can&apos;t be reversed.
+                      </p>
+                      <div>
+                        {isLoading ? (
+                          <LoadingButton />
+                        ) : (
+                          <Button
+                            className="bg-red-500 hover:bg-red-600 text-white w-max p-2 md:p-4 float-right"
+                            onClick={() => handleReviewDelete(review._id)}
+                          >
+                            Delete
+                          </Button>
+                        )}
                       </div>
-                    </DialogContent>
-                  )}
+                    </div>
+                  </DialogContent>
                 </Dialog>
 
                 <Dialog>
@@ -147,32 +146,32 @@ const ReviewsSection = () => {
                       </Button>
                     )}
                   </DialogTrigger>
-                  {showEditDialog && (
-                    <DialogContent className="md:max-w-[550px]">
-                      <div className="flex flex-col gap-5">
-                        <h1 className="text-2xl font-bold">Edit Your Review</h1>
-                        <p className="text-muted-foreground">
-                          Make changes to your review below. Please remember
-                          that your edits will update the existing review.
-                        </p>
-                        {editingId === review._id && (
-                          <div className="mt-2 space-y-2">
-                            <Textarea
-                              value={editMessage}
-                              onChange={(e) => setEditMessage(e.target.value)}
-                              placeholder="Edit your review here..."
-                            />
-                            <Button
-                              className="w-max p-2 md:p-4"
-                              onClick={() => handleReviewUpdate(review._id)}
-                            >
-                              Save Changes
-                            </Button>
-                          </div>
+                  <DialogContent className="md:max-w-[550px]">
+                    <div className="flex flex-col gap-5">
+                      <h1 className="text-2xl font-bold">Edit Your Review</h1>
+                      <p className="text-muted-foreground">
+                        Make changes to your review below. Please remember that
+                        your edits will update the existing review.
+                      </p>
+                      <div className="mt-2 space-y-2">
+                        <Textarea
+                          value={editMessage}
+                          onChange={(e) => setEditMessage(e.target.value)}
+                          placeholder="Edit your review here..."
+                        />
+                        {isLoading ? (
+                          <LoadingButton />
+                        ) : (
+                          <Button
+                            className="w-max p-2 md:p-4"
+                            onClick={() => handleReviewUpdate(review._id)}
+                          >
+                            Save Changes
+                          </Button>
                         )}
                       </div>
-                    </DialogContent>
-                  )}
+                    </div>
+                  </DialogContent>
                 </Dialog>
               </div>
             )}

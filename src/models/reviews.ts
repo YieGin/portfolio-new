@@ -5,6 +5,9 @@ const reviewsSchema = new mongoose.Schema({
   message: {
     type: String,
   },
+  rating: {
+    type: Number,
+  },
   createdAt: { type: Date, default: Date.now },
 }, {
   toJSON: { virtuals: true },

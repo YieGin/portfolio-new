@@ -8,8 +8,7 @@ export async function POST(req: NextRequest) {
   await connectMongo();
 
   try {
-    const { auth0Id, email, name } = body;
-
+    const { auth0Id, email } = body; 
     if (!auth0Id || !email) {
       return new NextResponse(
         JSON.stringify({ message: "Missing required fields: auth0Id, email" }),
@@ -22,7 +21,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(existingUser, { status: 200 });
     }
 
-    const newUser = new User({ auth0Id, email, name });
+    const newUser = new User({ auth0Id, email });
     await newUser.save();
 
     return NextResponse.json(newUser, { status: 201 });

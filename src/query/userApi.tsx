@@ -3,11 +3,13 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 
 type CreateUserRequest = {
   auth0Id: string;
+  email: string;
 };
 
 export type ReviewType = {
   user: string;
   message: string;
+  rating?: number;
   formattedDate?: string;
   name: string;
   image: string;
@@ -23,15 +25,16 @@ export type ReviewResponse = {
     auth0Id: string;
   };
   message: string;
+  rating?: number;
   formattedDate: string;
 }
 
 export const useCreateUser = () => {
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth0()
 
   const createMyUserRequest = async (user: CreateUserRequest) => {
     const accessToken = await getAccessTokenSilently();
-    const response = await fetch("/api/user", {
+    const response = await fetch('/api/user', {
       method: "POST",
       headers: {
         Authorization: "Bearer " + accessToken,

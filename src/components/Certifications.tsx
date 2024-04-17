@@ -7,6 +7,8 @@ import {
 } from "./ui/accordion";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
 const certificationsSkills = [
   {
@@ -81,17 +83,46 @@ const certificationsSkills = [
   {
     id: 4,
     skills: [],
-    descripition: "Achieved a C2 certification to demonstrate my high proficiency in English, both in speaking and writing, ensuring effective communication will not be a barrier in any professional setting.",
+    descripition:
+      "Achieved a C2 certification to demonstrate my high proficiency in English, both in speaking and writing, ensuring effective communication will not be a barrier in any professional setting.",
     name: "EF SET English Certificate 74/100 (C2 Proficient)",
     link: "https://cert.efset.org/vkh5S7",
   },
 ];
 
 const Certifications = () => {
+  const itemVariantsLeft = {
+    offscreen: { opacity: 0, x: -50 },
+    onscreen: () => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.5, duration: 0.5 },
+    }),
+  };
+
+  const itemVariants = {
+    offscreen: { opacity: 0, y: 50 },
+    onscreen: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: index * 0.1, duration: 0.3 },
+    }),
+  };
+
   return (
     <div className="flex container flex-col lg:flex-row xl:lg:px-48 lg:px-32 gap-10 justify-between">
-      <div className="lg:w-1/2">
-        <h1 className="md:text-6xl text-4xl font-bold font-Rubik">Certifications</h1>
+      <motion.div
+        variants={itemVariantsLeft}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+        className="lg:w-1/2"
+      >
+        <AnimatedCharacters
+          className="md:text-6xl text-4xl font-bold font-Rubik"
+          type="heading1"
+          text="Certifications"
+        />
         <p className="text-[0.9rem] mt-5 text-muted-foreground leading-7">
           In 2024, I honed my backend development skills, dedicating over 160
           hours to deep dives into Node.js and Python. This journey encompassed
@@ -106,7 +137,7 @@ const Certifications = () => {
           solve complex challenges and drive innovation in web development and
           communication.
         </p>
-      </div>
+      </motion.div>
       <div className="lg:w-1/2">
         <Accordion
           type="single"
@@ -114,30 +145,40 @@ const Certifications = () => {
           className="w-full space-y-10 text-start"
         >
           {certificationsSkills.map((certification) => (
-            <AccordionItem
-              className="text-start"
+            <motion.div
+              variants={itemVariants}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={certification.id}
               key={certification.id}
-              value={certification.id.toString()}
             >
-              <AccordionTrigger className="text-start">
-                {certification.name}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="flex flex-wrap gap-3">
-                  {certification.skills.map((skill, index) => (
-                    <Badge key={index}>{skill}</Badge>
-                  ))}
-                </div>
-                <AccordionContent>{certification.descripition}</AccordionContent>
-                <Link
-                  target="_blank"
-                  href={certification.link}
-                  className="underline-offset-2 underline float-right mb-5 font-semibold"
-                >
-                  Check out certification
-                </Link>
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionItem
+                className="text-start"
+                value={certification.id.toString()}
+              >
+                <AccordionTrigger className="text-start">
+                  {certification.name}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-wrap gap-3">
+                    {certification.skills.map((skill, index) => (
+                      <Badge key={index}>{skill}</Badge>
+                    ))}
+                  </div>
+                  <AccordionContent>
+                    {certification.descripition}
+                  </AccordionContent>
+                  <Link
+                    target="_blank"
+                    href={certification.link}
+                    className="underline-offset-2 underline float-right mb-5 font-semibold"
+                  >
+                    Check out certification
+                  </Link>
+                </AccordionContent>
+              </AccordionItem>
+            </motion.div>
           ))}
         </Accordion>
       </div>

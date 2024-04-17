@@ -27,6 +27,7 @@ import {
   SiMongodb,
 } from "react-icons/si";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const links = [
   {
@@ -141,9 +142,32 @@ const links = [
 ];
 
 const Skills = () => {
+  const itemVariants = {
+    offscreen: { opacity: 0, y: 50 },
+    onscreen: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: index * 0.1, duration: 0.3 },
+    }),
+  };
+  const itemVariantsLeft = {
+    offscreen: { opacity: 0, x: -50 },
+    onscreen: () => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.3, duration: 0.3 },
+    }),
+  };
+
   return (
     <div className="flex container flex-col lg:flex-row xl:lg:px-48 lg:px-32 gap-10 justify-between">
-      <div className="lg:w-1/2">
+      <motion.div
+        variants={itemVariantsLeft}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        className="lg:w-1/2"
+      >
         <h1 className="md:text-6xl text-4xl font-bold font-Rubik">My skills</h1>
         <p className="text-[0.9rem] mt-5 text-muted-foreground leading-7">
           In the rapidly evolving digital landscape, my skillset is a unique
@@ -151,28 +175,36 @@ const Skills = () => {
           communication. Armed with a comprehensive understanding of both
           front-end and back-end technologies, I navigate through the
           complexities of full-stack development with ease. My expertise extends
-          beyond code; it&apos;s about building solutions that resonate with users
-          and meet the strategic objectives of businesses. Below is a showcase
-          of the technologies I excel in and the methodologies that guide my
-          approach to successful project completion. Whether it&apos;s crafting
-          engaging user experiences or engineering robust server-side
-          architectures, I&apos;m committed to pushing the boundaries of what&apos;s
-          possible.
+          beyond code; it&apos;s about building solutions that resonate with
+          users and meet the strategic objectives of businesses. Below is a
+          showcase of the technologies I excel in and the methodologies that
+          guide my approach to successful project completion. Whether it&apos;s
+          crafting engaging user experiences or engineering robust server-side
+          architectures, I&apos;m committed to pushing the boundaries of
+          what&apos;s possible.
         </p>
-      </div>
+      </motion.div>
       <div className="grid lg:grid-cols-5 md:grid-cols-6 grid-cols-4 gap-2 md:gap-5">
         {links.map((link, index) => (
-          <Link
+          <motion.div
+            variants={itemVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            custom={index}
             key={index}
-            target="_blank"
-            href={link.href}
-            className="px-5 py-3 flex flex-col items-center justify-center gap-y-2 border-[1px] rounded-md dark:hover:bg-gray-800 hover:bg-gray-100 cursor-pointer"
           >
-            {link.icon}
-            <p className="sm:text-[0.7rem] text-[0.6rem] text-muted-foreground text-center">
-              {link.title}
-            </p>
-          </Link>
+            <Link
+              target="_blank"
+              href={link.href}
+              className="px-5 h-full py-3 flex flex-col items-center justify-center gap-y-2 border-[1px] rounded-md dark:hover:bg-gray-800 hover:bg-gray-100 cursor-pointer"
+            >
+              {link.icon}
+              <p className="sm:text-[0.7rem] text-[0.6rem] text-muted-foreground text-center">
+                {link.title}
+              </p>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -1,11 +1,10 @@
-import { SoftwareList } from '@/lib/constant'
-import AnimatedCharacters from '@/utlis/AnimatedCharacters'
-import Image from 'next/image'
-import React from 'react'
+import { SoftwareList } from "@/lib/constant";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
+import Image from "next/image";
+import React from "react";
 import { motion } from "framer-motion";
 
 const Softwares = () => {
-
   const itemVariants = {
     offscreen: { opacity: 0, y: 50 },
     onscreen: (index: number) => ({
@@ -16,7 +15,7 @@ const Softwares = () => {
   };
 
   return (
-    <div className='container lg:px-48'>
+    <div className="container lg:px-48">
       <AnimatedCharacters
         className="md:text-4xl text-2xl font-bold"
         type="heading1"
@@ -25,7 +24,7 @@ const Softwares = () => {
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 mt-10">
         {SoftwareList.map((item) => (
           <motion.div
-          variants={itemVariants}
+            variants={itemVariants}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}
@@ -50,7 +49,7 @@ const Softwares = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Softwares
+export default Softwares;

@@ -1,15 +1,17 @@
 import { useCreateReview } from "@/query/userApi";
 import { useAuth0 } from "@auth0/auth0-react";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { GiChainedHeart } from "react-icons/gi";
 import { toast } from "sonner";
 import LoadingButton from "@/utlis/LoadingButton";
+import StarRating from "./StarRating";
 
 const WriteReview = () => {
   const { mutateAsync: createReview, isLoading } = useCreateReview();
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
+  const [rating, setRating] = useState(0);
 
   const handleReviewSubmit = async () => {
     if (!isAuthenticated || !user) {
@@ -27,6 +29,7 @@ const WriteReview = () => {
     const review = {
       user: user.sub!,
       message: reviewElement.value,
+      rating,
       email: user.email!,
       name: user.name!,
       image: user.picture!,
@@ -78,6 +81,7 @@ const WriteReview = () => {
                   placeholder="Type your message here."
                 />
                 <div className="flex gap-2 float-right mt-2">
+                <StarRating onRating={setRating} /> 
                   <Button
                     className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white"
                     onClick={async () => await logout()}
