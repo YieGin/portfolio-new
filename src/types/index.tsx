@@ -26,7 +26,14 @@ export type CaseStudy = {
   skills: string[];
 }
 
+export type Props = Array<{
+  href: string;
+  title: string;
+  icon: IconType;
+}>;
+
 import { NextRequest, NextResponse } from "next/server";
+import { IconType } from "react-icons/lib";
 
 export type CombinedRequest =  NextRequest;
 export type CombinedResponse = NextResponse;

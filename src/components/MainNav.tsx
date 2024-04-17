@@ -28,6 +28,7 @@ export const NavList = [
 const MainNav = () => {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
+  
   return (
     <div>
       <div className="flex gap-10">
@@ -35,11 +36,13 @@ const MainNav = () => {
           <div key={index}>
             <TransitionLink
               href={item.href}
-              className={`${
+              className={`text-[0.8rem] md:text-[1rem] font-medium ${
                 isActive("/projects")
-                  ? "text-[#fff]"
-                  : "text-foreground/60 transition-colors"
-              } text-[0.8rem] md:text-[1rem] font-medium text`}
+                  ? "text-[#fff]" // Special case for `/projects` link
+                  : isActive(item.href)
+                    ? "text-black dark:text-white" // Active link color for other pages
+                    : "text-foreground/60" // Inactive link color
+              }`}
             >
               {item.name}
             </TransitionLink>

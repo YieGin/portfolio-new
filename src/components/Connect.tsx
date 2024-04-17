@@ -1,43 +1,7 @@
-import { LinkIcon } from "lucide-react";
 import Link from "next/link";
-import { IconType } from "react-icons/lib";
-import {
-  SiFacebook,
-  SiGithub,
-  SiInstagram,
-  SiSocialblade,
-  SiX,
-} from "react-icons/si";
+import { SiSocialblade } from "react-icons/si";
 import { motion } from "framer-motion";
-
-type Props = Array<{
-  href: string;
-  title: string;
-  icon: IconType;
-}>;
-
-export const SOCIALS: Props = [
-  {
-    href: "https://github.com/YieGin",
-    title: "GitHub",
-    icon: SiGithub,
-  },
-  {
-    href: "https://www.facebook.com/islam.bba.182/",
-    title: "Facebook",
-    icon: SiFacebook,
-  },
-  {
-    href: "https://www.instagram.com/belamri_yie/",
-    title: "Instagram",
-    icon: SiInstagram,
-  },
-  {
-    href: "https://www.linkedin.com/in/islam-belamri/",
-    title: "Linkedin",
-    icon: SiX,
-  },
-];
+import { SOCIALS } from "@/lib/constant";
 
 const Connect = () => {
   const itemVariants = {

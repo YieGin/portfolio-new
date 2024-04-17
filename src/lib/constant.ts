@@ -1,3 +1,4 @@
+import { Props } from "@/types";
 import {
   Case,
   Chair,
@@ -34,6 +35,14 @@ import {
   visual,
   vscode,
 } from "../../public/assets";
+
+import {
+  SiFacebook,
+  SiGithub,
+  SiInstagram,
+  SiSocialblade,
+  SiX,
+} from "react-icons/si";
 
 export const products = [
   {
@@ -102,6 +111,31 @@ export const products = [
     thumbnail: P7,
   },
 ];
+
+
+export const SOCIALS: Props = [
+  {
+    href: "https://github.com/YieGin",
+    title: "GitHub",
+    icon: SiGithub,
+  },
+  {
+    href: "https://www.facebook.com/islam.bba.182/",
+    title: "Facebook",
+    icon: SiFacebook,
+  },
+  {
+    href: "https://www.instagram.com/belamri_yie/",
+    title: "Instagram",
+    icon: SiInstagram,
+  },
+  {
+    href: "https://www.linkedin.com/in/islam-belamri/",
+    title: "Linkedin",
+    icon: SiX,
+  },
+];
+
 
 export const HardwareList = [
   {

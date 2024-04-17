@@ -17,7 +17,6 @@ import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Textarea } from "./ui/textarea";
 import { useCreateContact } from "@/query/emailApi";
 import LoadingButton from "@/utlis/LoadingButton";
-import { motion } from "framer-motion";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -42,21 +41,8 @@ const FormSection = () => {
     createRestaurant(values);
   };
 
-  const itemVariants = {
-    offscreen: { opacity: 0, x: -50 },
-    onscreen: () => ({
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 },
-    }),
-  };
-
   return (
-    <motion.div
-      variants={itemVariants}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
+    <div
       className="flex flex-col md:w-1/2 space-y-5"
     >
       <p>Contact</p>
@@ -156,7 +142,7 @@ const FormSection = () => {
           )}
         </form>
       </Form>
-    </motion.div>
+    </div>
   );
 };
 

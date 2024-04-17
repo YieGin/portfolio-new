@@ -1,7 +1,6 @@
 "use client";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
-import { GiHand } from "react-icons/gi";
 import { products } from "@/lib/constant";
 import ProfileSection from "@/components/Profile";
 import SkillsSection from "@/components/Skills";
@@ -19,7 +18,7 @@ const About = () => {
           type="heading1"
           text="About Me"
         />
-        <p className="text-[1rem] text-muted-foreground w-2/3">
+        <p className="text-[1rem] text-muted-foreground md:w-2/3">
           Hello! I&lsquo;m Islam. I&lsquo;m passionate about technology and have a strong
           background in the field. Here, I&lsquo;ll share my experiences, skills, and
           the projects I&lsquo;ve worked on.
