@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MdArrowOutward } from "react-icons/md";
+import { Loader } from "lucide-react";
 
 const ProjectPage = () => {
   const { subtitle } = useParams();
@@ -26,7 +27,7 @@ const ProjectPage = () => {
   if (!project) {
     return (
       <p className="font-bold text-4xl flex items-center justify-center">
-        Loading project details...
+        <Loader />
       </p>
     );
   }
@@ -41,7 +42,8 @@ const ProjectPage = () => {
         />
         <div className="flex gap-1 items-center">
           <p className="text-[1rem] text-muted-foreground">
-            Explore the hubs of my digital presence and projects
+            Explore This Project Dive into the details and highlights of {" "}
+            {project.subtitle}, a key part of my digital portfolio.
           </p>
         </div>
       </div>

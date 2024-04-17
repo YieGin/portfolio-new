@@ -1,59 +1,24 @@
 import React from "react";
 import TransitionLink from "./TransitionLink";
-import { usePathname } from "next/navigation";
 import { Separator } from "./ui/separator";
+import { NavList } from "./MainNav";
 
 const MobileNavLinks = () => {
-  const pathname = usePathname();
-  const isActive = (path: string) => pathname === path;
   return (
     <div className="flex flex-col gap-y-5 mt-10">
-      <ul className="flex flex-col gap-5">
-        <TransitionLink
-          href="/projects"
-          className={`${
-            isActive("/projects")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] text-[#000] dark:text-white font-bold text`}
-        >
-          Projects
-        </TransitionLink>
-        <Separator />
-        <TransitionLink
-          href="/about"
-          className={`${
-            isActive("/about")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] text-[#000] dark:text-white font-bold text`}
-        >
-          About
-        </TransitionLink>
-        <Separator />
-        <TransitionLink
-          href="/contact"
-          className={`${
-            isActive("/contact")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] text-[#000] dark:text-white font-bold text`}
-        >
-          Contact
-        </TransitionLink>
-        <Separator />
-        <TransitionLink
-          href="/uses"
-          className={`${
-            isActive("/uses")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] text-[#000] dark:text-white font-bold text`}
-        >
-          Uses
-        </TransitionLink>
-        <Separator />
-      </ul>
+      <div className="flex flex-col gap-5">
+        {NavList.map((item, index) => (
+          <React.Fragment key={index}>
+            <TransitionLink
+              href={item.href}
+              className="text-[0.8rem] md:text-[1rem] font-bold dark:text-white"
+            >
+              {item.name}
+            </TransitionLink>
+            {index < NavList.length - 1 && <Separator />}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };

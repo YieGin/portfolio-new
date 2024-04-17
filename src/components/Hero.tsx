@@ -2,10 +2,10 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Button } from "./ui/button";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import TransitionLink from "./TransitionLink";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -18,10 +18,10 @@ const Hero = () => {
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="dark:text-white font-bold mb-4 text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-200 to-teal-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-800">
               Hello, I&apos;m
             </span>
-            <br></br>
+            <br />
             <TypeAnimation
               sequence={[
                 "Islam",
@@ -44,12 +44,14 @@ const Hero = () => {
             that bring your digital visions to life. Let&apos;s build something great
             together.
           </p>
-          <div className="flex items-center justify-center sm:items-start sm:justify-normal gap-5">
+          <div className="flex items-center justify-center sm:items-start sm:justify-start gap-5">
             <Button>
               <TransitionLink href="/contact">Hire Me</TransitionLink>
             </Button>
             <Button>
-              <Link href="/">Download CV</Link>
+              <a href="/assets/cv/Islam_Resume.pdf" download="Islam_CV.pdf">
+                Download CV
+              </a>
             </Button>
           </div>
         </motion.div>

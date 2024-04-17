@@ -147,7 +147,7 @@ const Skills = () => {
     onscreen: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: index * 0.1, duration: 0.3 },
+      transition: { delay: index * 0.1, duration: 0.2 },
     }),
   };
   const itemVariantsLeft = {
@@ -190,7 +190,7 @@ const Skills = () => {
             variants={itemVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             custom={index}
             key={index}
           >

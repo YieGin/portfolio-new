@@ -2,63 +2,49 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import TransitionLink from "./TransitionLink";
 
+export const NavList = [
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
+    name: "Guestbook",
+    href: "/guestbook",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Uses",
+    href: "/uses",
+  },
+];
 
 const MainNav = () => {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
   return (
     <div>
-      <div className="flex gap-5">
-        <TransitionLink
-          href="/projects"
-          className={`${
-            isActive("/projects")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-medium text`}
-        >
-          Projects
-        </TransitionLink>
-        <TransitionLink
-          href="/about"
-          className={`${
-            isActive("/about")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-medium text`}
-        >
-          About
-        </TransitionLink>
-        <TransitionLink
-          href="/contact"
-          className={`${
-            isActive("/contact")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-medium text`}
-        >
-          Contact
-        </TransitionLink>
-        <TransitionLink
-          href="/uses"
-          className={`${
-            isActive("/uses")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-medium text`}
-        >
-          Uses
-        </TransitionLink>
-        <TransitionLink
-          href="/guestbook"
-          className={`${
-            isActive("/guestbook")
-              ? "text-[#000] dark:text-white"
-              : "text-foreground/60 transition-colors"
-          } text-[0.8rem] md:text-[1rem] font-medium text`}
-        >
-          Guestbook
-        </TransitionLink>
+      <div className="flex gap-10">
+        {NavList.map((item, index) => (
+          <div key={index}>
+            <TransitionLink
+              href={item.href}
+              className={`${
+                isActive("/projects")
+                  ? "text-[#fff]"
+                  : "text-foreground/60 transition-colors"
+              } text-[0.8rem] md:text-[1rem] font-medium text`}
+            >
+              {item.name}
+            </TransitionLink>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const ContactImage = () => {
         }
       });
     });
-  }, []);
+  }, [scrollYProgress]);
 
   return (
     <motion.div

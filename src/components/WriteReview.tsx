@@ -9,6 +9,7 @@ import StarDisplay from './StarDisplay';
 import { useCreateReview, useFetchReviews } from '@/query/userApi';
 import { z } from 'zod';
 import LoadingButton from '@/utlis/LoadingButton';
+import { Loader } from 'lucide-react';
 
 const reviewSchema = z.object({
   message: z.string().min(2, "Your message must be at least 2 characters long."),
@@ -71,7 +72,7 @@ const WriteReview = () => {
           </h1>
           <p className="flex">
             {isReviewsLoading ? (
-              <LoadingButton />
+              <Loader />
             ) : (
               <StarDisplay rating={Math.round(averageRating)} />
             )}{" "}

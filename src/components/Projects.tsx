@@ -8,6 +8,7 @@ import { Badge } from "./ui/badge";
 import projectsList from "@/utlis/projectsList";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { motion } from "framer-motion";
+import TransitionLink from "./TransitionLink";
 
 const Projects = () => {
   const itemVariants = {
@@ -47,7 +48,7 @@ const Projects = () => {
                       text={study.title}
                     />
                   </div>
-                  <Link href={`/project/${study.subtitle}`}>
+                  <TransitionLink href={`/project/${study.subtitle}`}>
                     <Image
                       src={study.imgSrc}
                       width={5000}
@@ -55,7 +56,7 @@ const Projects = () => {
                       alt={study.subtitle}
                       className="rounded-md object-cover h-[300px] w-full"
                     />
-                  </Link>
+                  </TransitionLink>
                 </div>
                 <div className="md:w-1/2 md:mt-10 flex flex-col gap-y-3">
                   <AnimatedCharacters
