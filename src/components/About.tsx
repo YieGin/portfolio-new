@@ -7,6 +7,7 @@ import Stacks from "./Stacks";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import TransitionLink from "./TransitionLink";
 
 const About = () => {
   const itemVariants = {
@@ -59,9 +60,9 @@ const About = () => {
           </p>
         </motion.div>
       </div>
-      <div className="flex items-center justify-center mt-5">
+      <TransitionLink href="/about" className="flex items-center justify-center mt-5">
         <Button className="font-bold">Know more about me</Button>
-      </div>
+      </TransitionLink>
     </div>
   );
 };

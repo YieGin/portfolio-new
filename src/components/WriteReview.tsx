@@ -1,59 +1,83 @@
-import { useCreateReview } from "@/query/userApi";
-import { useAuth0 } from "@auth0/auth0-react";
-import React, { useState } from "react";
-import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
-import { GiChainedHeart } from "react-icons/gi";
-import { toast } from "sonner";
-import LoadingButton from "@/utlis/LoadingButton";
-import StarRating from "./StarRating";
+import React, { useEffect, useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { toast } from 'sonner';
+import { Button } from './ui/button';
+import { Textarea } from './ui/textarea';
+import { GiChainedHeart } from 'react-icons/gi';
+import StarRating from './StarRating';
+import StarDisplay from './StarDisplay';
+import { useCreateReview, useFetchReviews } from '@/query/userApi';
+import { z } from 'zod';
+import LoadingButton from '@/utlis/LoadingButton';
+
+const reviewSchema = z.object({
+  message: z.string().min(2, "Your message must be at least 2 characters long."),
+});
 
 const WriteReview = () => {
   const { mutateAsync: createReview, isLoading } = useCreateReview();
+  const { data: reviews, isError, isLoading: isReviewsLoading } = useFetchReviews();
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
   const [rating, setRating] = useState(0);
+  const [averageRating, setAverageRating] = useState(0);
+  const [message, setMessage] = useState('');
+  const [messageError, setMessageError] = useState('');
+
+  useEffect(() => {
+    if (reviews && reviews.length > 0) {
+      const totalRating = reviews.reduce((acc, review) => acc + (review.rating || 0), 0);
+      const avgRating = totalRating / reviews.length;
+      setAverageRating(avgRating);
+    }
+  }, [reviews]);
 
   const handleReviewSubmit = async () => {
     if (!isAuthenticated || !user) {
       toast.error("You need to be logged in to submit a review!");
       return;
     }
-    const reviewElement = document.getElementById(
-      "reviewTextarea"
-    ) as HTMLTextAreaElement | null;
-    if (!reviewElement || !reviewElement.value) {
-      toast.error("No review text found!");
-      return;
-    }
-
-    const review = {
-      user: user.sub!,
-      message: reviewElement.value,
-      rating,
-      email: user.email!,
-      name: user.name!,
-      image: user.picture!,
-      auth0Id: user.auth0Id!,
-    };
 
     try {
+      reviewSchema.parse({ message });
+      const review = {
+        user: user.sub!,
+        message: message,
+        rating,
+        email: user.email!,
+        name: user.name!,
+        image: user.picture!,
+        auth0Id: user.auth0Id!,
+      };
       await createReview(review);
       toast.success("Review submitted successfully!");
-      reviewElement.value = "";
+      setMessage(''); // Clear message after submission
     } catch (err) {
-      console.error(err);
-      toast.error(
-        "You have already submitted a review. You cannot submit more than one."
-      );
+      if (err instanceof z.ZodError) {
+        setMessageError(err.errors[0].message);
+        toast.error(err.errors[0].message);
+      } else {
+        console.error(err);
+        toast.error("You have already submitted a review. You cannot submit more than one.");
+      }
     }
   };
 
   return (
-    <div className="container xl:lg:px-48 lg:px-32 space-y-10 flex md:items-center flex-col">
+    <div className="container xl:lg:px-48 lg:px-32 space-y-4 flex md:items-center flex-col">
       <div className="flex flex-col gap-5 lg:w-2/3 border-[1px] h-full p-5 rounded-lg">
-        <h1 className="md:text-2xl font-bold flex items-center gap-2">
-          Share Your Feedback <GiChainedHeart className="text-red-400" />
-        </h1>
+        <div className="flex justify-between flex-col md:flex-row">
+          <h1 className="md:text-2xl font-bold flex items-center gap-2">
+            Share Your Feedback <GiChainedHeart className="text-red-400" />
+          </h1>
+          <p className="flex">
+            {isReviewsLoading ? (
+              <LoadingButton />
+            ) : (
+              <StarDisplay rating={Math.round(averageRating)} />
+            )}{" "}
+            <span className="ml-2">{Math.round(averageRating)} / 5</span>
+          </p>
+        </div>
         <p className="text-muted-foreground text-[0.8rem] md:text-[1rem]">
           Welcome to my digital portfolio! I&apos;m thrilled to have you here.
           Your feedback is invaluable to me as I strive to improve and evolve
@@ -77,33 +101,41 @@ const WriteReview = () => {
                 <p className="font-semibold">{user?.name}</p>
                 <Textarea
                   id="reviewTextarea"
+                  value={message}
+                  onChange={e => {
+                    setMessage(e.target.value);
+                    setMessageError('');
+                  }}
                   className=""
                   placeholder="Type your message here."
                 />
-                <div className="flex gap-2 float-right mt-2">
-                <StarRating onRating={setRating} /> 
-                  <Button
-                    className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white"
-                    onClick={async () => await logout()}
-                  >
-                    Log Out
-                  </Button>
-                  {isLoading ? (
-                    <LoadingButton />
-                  ) : (
+                {messageError && <p className="text-[0.8rem] font-medium text-red-600">{messageError}</p>}
+                <div className="flex flex-col-reverse sm:flex-row gap-2 float-right mt-2">
+                  <StarRating onRating={setRating} />
+                  <div className="flex gap-2">
                     <Button
-                      className="w-max p-2 md:p-4"
-                      onClick={handleReviewSubmit}
+                      className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white"
+                      onClick={async () => await logout()}
                     >
-                      Submit
+                      Log Out
                     </Button>
-                  )}
+                    {isLoading ? (
+                      <LoadingButton />
+                    ) : (
+                      <Button
+                        className="w-max p-2 md:p-4"
+                        onClick={handleReviewSubmit}
+                      >
+                        Submit
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="ml-auto mt-2">
+          <div className="ml-auto">
             {isLoading ? (
               <LoadingButton />
             ) : (

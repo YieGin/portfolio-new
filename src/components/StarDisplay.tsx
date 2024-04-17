@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { TiStar } from "react-icons/ti";
 
 interface StarDisplayProps {
   rating?: number; 
@@ -8,10 +8,10 @@ interface StarDisplayProps {
 const StarDisplay: React.FC<StarDisplayProps> = ({ rating = 0 }) => { 
   const totalStars = 5;
   return (
-    <div className="flex gap-1">
+    <div className="flex">
       {[...Array(totalStars)].map((_, index) => (
         <span key={index}>
-          <FaStar color={index < rating ? "#FF6701" : "#e4e5e9"} />
+          <TiStar className="text-2xl" color={index < rating ? "#FF6701" : "#e4e5e9"} />
         </span>
       ))}
     </div>

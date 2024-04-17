@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
+import { TiStar } from "react-icons/ti";
 
 interface StarRatingProps {
   onRating: (rating: number) => void;
@@ -10,7 +10,7 @@ const StarRating: React.FC<StarRatingProps> = ({ onRating }) => {
   const [hover, setHover] = useState(0);
 
   return (
-    <div className="flex gap-1">
+    <div className="flex ml-auto">
       {[...Array(5)].map((_, index) => {
         const starIndex = index + 1;
         return (
@@ -22,7 +22,7 @@ const StarRating: React.FC<StarRatingProps> = ({ onRating }) => {
             onMouseEnter={() => setHover(starIndex)}
             onMouseLeave={() => setHover(rating)}
           >
-            <FaStar color={starIndex <= (hover || rating) ? "#FF6701" : "#e4e5e9"} size={24} />
+            <TiStar color={starIndex <= (hover || rating) ? "#FF6701" : "#e4e5e9"} size={24} />
           </button>
         );
       })}
