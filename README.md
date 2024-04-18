@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Portfolio Cover Image" src="[https://res.cloudinary.com/dnttuevkd/image/upload/v1713481476/Capsqdqsdqsture_cjknwg.png](https://res.cloudinary.com/dnttuevkd/image/upload/v1713483143/Captsssssre_aqynqc.png)">
+  <img alt="Portfolio Cover Image" src="https://res.cloudinary.com/dnttuevkd/image/upload/v1713483143/Captsssssre_aqynqc.png">
 </p>
 
 <h1 align="center">
