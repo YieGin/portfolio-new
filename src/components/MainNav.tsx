@@ -38,10 +38,10 @@ const MainNav = () => {
               href={item.href}
               className={`text-[0.8rem] md:text-[1rem] font-medium ${
                 isActive("/projects")
-                  ? "text-[#fff]" // Special case for `/projects` link
+                  ? "text-[#fff]"
                   : isActive(item.href)
-                    ? "text-black dark:text-white" // Active link color for other pages
-                    : "text-foreground/60" // Inactive link color
+                    ? "text-black dark:text-white"
+                    : "text-foreground/60"
               }`}
             >
               {item.name}
