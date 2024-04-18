@@ -16,7 +16,7 @@ const Projects = () => {
     onscreen: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: index * 0.3, duration: 0.3 },
+      transition: { delay: index * 0.2, duration: 0.3 },
     }),
   };
   return (
@@ -33,7 +33,7 @@ const Projects = () => {
               variants={itemVariants}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               custom={index}
               key={index}
               className="rounded-xl p-5 shadow-feature-card dark:shadow-feature-card-dark border-2 w-full"

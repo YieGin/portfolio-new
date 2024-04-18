@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MdArrowOutward } from "react-icons/md";
 import { Loader } from "lucide-react";
+import Link from "next/link";
 
 const ProjectPage = () => {
   const { subtitle } = useParams();
@@ -27,7 +28,7 @@ const ProjectPage = () => {
   if (!project) {
     return (
       <p className="font-bold text-4xl flex items-center justify-center">
-        <Loader />
+        <Loader className="animate-spin" />
       </p>
     );
   }
@@ -42,7 +43,7 @@ const ProjectPage = () => {
         />
         <div className="flex gap-1 items-center">
           <p className="text-[1rem] text-muted-foreground">
-            Explore This Project Dive into the details and highlights of {" "}
+            Explore This Project Dive into the details and highlights of{" "}
             {project.subtitle}, a key part of my digital portfolio.
           </p>
         </div>
@@ -62,15 +63,21 @@ const ProjectPage = () => {
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2 md:gap-5 mt-5">
-          <Button className="flex gap-1">
-            <p>Visit Website</p> <MdArrowOutward />
-          </Button>
-          <Button className="flex gap-1">
-            <p>Github</p> <MdArrowOutward />
-          </Button>
-          <Button className="flex gap-1">
-            <p>Youtube</p> <MdArrowOutward />
-          </Button>
+          <Link target="_blank" href={project.websiteLink}>
+            <Button className="flex gap-1">
+              <p>Visit Website</p> <MdArrowOutward />
+            </Button>
+          </Link>
+          <Link target="_blank" href={project.codeLink}>
+            <Button className="flex gap-1">
+              <p>Github</p> <MdArrowOutward />
+            </Button>
+          </Link>
+          <Link target="_blank" href={project.youtubeLink}>
+            <Button className="flex gap-1">
+              <p>Youtube</p> <MdArrowOutward />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -51,7 +51,7 @@ const WriteReview = () => {
       };
       await createReview(review);
       toast.success("Review submitted successfully!");
-      setMessage(''); // Clear message after submission
+      setMessage('');
     } catch (err) {
       if (err instanceof z.ZodError) {
         setMessageError(err.errors[0].message);
@@ -72,7 +72,7 @@ const WriteReview = () => {
           </h1>
           <p className="flex">
             {isReviewsLoading ? (
-              <Loader />
+              <Loader className="animate-spin" />
             ) : (
               <StarDisplay rating={Math.round(averageRating)} />
             )}{" "}
