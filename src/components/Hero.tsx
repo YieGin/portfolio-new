@@ -49,15 +49,15 @@ const Hero = () => {
               <TransitionLink href="/contact">Hire Me</TransitionLink>
             </Button>
             <Button>
-              <a href="/assets/cv/Islam_Resume.pdf" download="Islam_CV.pdf">
+              <Link target="_blank" href="/assets/cv/Islam_Resume.pdf" >
                 Download CV
-              </a>
+              </Link>
             </Button>
           </div>
         </motion.div>
         <div className="flex items-center justify-center mt-10 sm:w-max">
           <Avatar className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
-            <AvatarImage src="https://res.cloudinary.com/dnttuevkd/image/upload/v1713426950/profile-pic_3_vn9a21.png" />
+            <AvatarImage src="https://res.cloudinary.com/dnttuevkd/image/upload/v1713451509/profile-pic_16_s4unet.png" />
           </Avatar>
         </div>
       </div>

@@ -3,6 +3,33 @@ import React from "react";
 import TransitionLink from "./TransitionLink";
 import { Logo } from "../../public/assets";
 
+const linkData = [
+  {
+    id: "primary",
+    links: [
+      { href: "/", text: "Home" },
+      { href: "/about", text: "About" },
+      { href: "/contact", text: "Contact" },
+    ],
+  },
+  {
+    id: "projects",
+    links: [
+      { href: "/projects", text: "Projects" },
+      { href: "/uses", text: "Uses" },
+      { href: "/guestbook", text: "Guestbook" },
+    ],
+  },
+  {
+    id: "social",
+    links: [
+      { href: "/https://www.instagram.com/belamri_yie", text: "Instagram" },
+      { href: "/https://github.com/YieGin", text: "GitHub" },
+      { href: "/https://www.linkedin.com/in/islam-belamri", text: "Linkden" },
+    ],
+  },
+];
+
 const Footer = () => {
   return (
     <div className="container flex items-center justify-center w-full">
@@ -11,69 +38,31 @@ const Footer = () => {
           <Logo className="dark:text-white text-black w-[80px] h-[80px]" />
         </div>
         <div className="flex justify-between lg:gap-52 lg:justify-normal mt-5">
-          <div className="space-y-4">
-            <TransitionLink
-              href={"/"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Home
-            </TransitionLink>
-            <TransitionLink
-              href={"/about"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              About
-            </TransitionLink>
-            <TransitionLink
-              href={"/contact"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Contact
-            </TransitionLink>
-          </div>
-          <div className="space-y-4">
-            <TransitionLink
-              href={"/projects"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Projects
-            </TransitionLink>
-            <TransitionLink
-              href={"/uses"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Uses
-            </TransitionLink>
-            <TransitionLink
-              href={"/guestbook"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Guestbook
-            </TransitionLink>
-          </div>
-          <div className="space-y-4 flex flex-col">
-            <Link
-              target="_blank"
-              href={"/"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Instagram
-            </Link>
-            <Link
-              target="_blank"
-              href={"/"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              GitHub
-            </Link>
-            <Link
-              target="_blank"
-              href={"/"}
-              className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
-            >
-              Linkden
-            </Link>
-          </div>
+          {linkData.map((section) => (
+            <div key={section.id} className="space-y-4">
+              {section.links.map((link) =>
+                section.id === "social" ? (
+                  <div key={link.text} className="flex flex-col">
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
+                    >
+                      {link.text}
+                    </Link>
+                  </div>
+                ) : (
+                  <TransitionLink
+                    key={link.text}
+                    href={link.href}
+                    className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
+                  >
+                    {link.text}
+                  </TransitionLink>
+                )
+              )}
+            </div>
+          ))}
         </div>
         <p className="text-[0.8rem] mt-10">
           © Copyright 2024 – Islam. All Rights Reserved.

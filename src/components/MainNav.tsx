@@ -36,7 +36,7 @@ const MainNav = () => {
           <div key={index}>
             <TransitionLink
               href={item.href}
-              className={`text-[0.8rem] md:text-[1rem] font-medium ${
+              className={`text-[0.8rem] md:text-[1rem] font-medium text ${
                 isActive("/projects")
                   ? "text-[#fff]"
                   : isActive(item.href)
