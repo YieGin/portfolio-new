@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img alt="Portfolio Cover Image" src="https://res.cloudinary.com/dnttuevkd/image/upload/v1713481476/Capsqdqsdqsture_cjknwg.png">
+</p>
 
-## Getting Started
+<h1 align="center">
+  Portfolio
+</h1>
 
-First, run the development server:
+<p align="center">
+  Welcome to my newly designed portfolio! This site is a vibrant showcase of my professional journey, including recent projects, experiences, and certifications. It reflects the diverse aspects of my skills and the milestones that have shaped my career. Dive in and get inspired!
+</p>
+
+## ✨ Highlights
+
+- ⚡️ **Next.js with App Router (Turbo)** - Harnessing the latest in routing technology for React applications.
+- 🛡 **TypeScript** - Ensures robust type-checking and enhances developer productivity.
+- 🎨 **Tailwind CSS** - For stylish and responsive design.
+- 🖥 **Shadn/UI** - A modern UI framework for building visually appealing interfaces.
+- 🔒 **Auth0** - Provides a secure and scalable authentication solution.
+- 📊 **React Query** - Manages efficient data fetching and state within React.
+- 🌅 **Cloudinary** - Advanced cloud service for media asset management.
+- 🚪 **Authentication** - Implements robust security features to protect user data.
+- 📝 **Guestbook with Post Views** - Adds interactive features to engage visitors.
+- 🎭 **Animation** - Integrates Framer Motion/GSAP for smooth, compelling animations.
+- 💄 **Prettier** - Automatically formats code to maintain a consistent style.
+- 🌗 **Light/Dark Mode** - Enhances user experience with theme flexibility.
+- 📱 **Responsive Design** - Ensures a great user experience across all devices.
+- 🌟 **React Icons** - Uses a diverse icon library for visually intuitive interfaces.
+- 📑 **Zod** - Provides strong type safety for form validation.
+- 🗄 **Mongoose/MongoDB** - Handles efficient data storage and retrieval with a NoSQL database.
+- 📧 **Nodemailer** - Manages reliable email sending for communication and notifications.
+
+## ✨ Requirements
+
+- **Node.js**: Recommended version 20.x, which supports all current dependencies and features.
+- **pnpm**: Recommended version 8.14.0 for efficient package management.
+- **Visual Studio Code**: Recommended IDE for its extensive support for JavaScript and TypeScript. Essential extensions include:
+  - **ESLint** - Helps enforce coding standards and identify problematic patterns.
+  - **Prettier** - Ensures consistent code formatting.
+  - **TypeScript** - Enhances code quality and developer productivity.
+  - **React Developer Tools** - Optional, for inspecting the React component hierarchy.
+- **MongoDB**: Required for database operations as indicated by the Mongoose dependency.
+- **Nodemailer**: Essential for handling outgoing emails within the application.
+- **React Query**: Necessary for efficient data fetching, caching, and state management.
+- **Zod**: Important for robust data validation in forms.
+
+## 👋 Getting Started
+
+To get the project up and running on your local machine, follow these steps:
+
+```bash
+git clone [https://github.com/tszhong0411/honghong.me.git](https://github.com/YieGin/portfolio-new.git)
+cd portfolio-new
+npm install
+```
+
+Create a .env file based on the provided .env.example file and fill in the necessary variables.
+```bash
+NEXT_PUBLIC_AUTH0_DOMAIN=
+NEXT_PUBLIC_AUTH0_CLIENT_ID=
+NEXT_PUBLIC_AUTH0_CALLBACK_URL=
+NEXT_PUBLIC_API_BASE_URL=
+NEXT_PUBLIC_AUDIENCE=
+```
+
+To run the app in development mode:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Visit http://localhost:3000 to view the app in your browser.
