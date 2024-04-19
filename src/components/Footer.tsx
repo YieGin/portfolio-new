@@ -23,9 +23,9 @@ const linkData = [
   {
     id: "social",
     links: [
-      { href: "/https://www.instagram.com/belamri_yie", text: "Instagram" },
-      { href: "/https://github.com/YieGin", text: "GitHub" },
-      { href: "/https://www.linkedin.com/in/islam-belamri", text: "Linkden" },
+      { href: "https://www.instagram.com/belamri_yie", text: "Instagram" },
+      { href: "https://github.com/YieGin", text: "GitHub" },
+      { href: "https://www.linkedin.com/in/islam-belamri", text: "Linkden" },
     ],
   },
 ];

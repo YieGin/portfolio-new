@@ -49,9 +49,9 @@ const Hero = () => {
               <TransitionLink href="/contact">Hire Me</TransitionLink>
             </Button>
             <Button>
-              <a href="/assets/cv/Islam_Resume.pdf" download="Islam_CV.pdf">
+              <Link target="_blank" href="/assets/cv/Islam_Resume.pdf">
                 Download CV
-              </a>
+              </Link>
             </Button>
           </div>
         </motion.div>
