@@ -49,7 +49,7 @@
 To get the project up and running on your local machine, follow these steps:
 
 ```bash
-git clone [https://github.com/tszhong0411/honghong.me.git](https://github.com/YieGin/portfolio-new.git)
+git clone (https://github.com/YieGin/portfolio-new.git)
 cd portfolio-new
 npm install
 ```
