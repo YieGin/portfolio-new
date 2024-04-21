@@ -17,7 +17,7 @@ const linkData = [
     links: [
       { href: "/projects", text: "Projects" },
       { href: "/uses", text: "Uses" },
-      { href: "/testimonials", text: "testimonials" },
+      { href: "/guestbook", text: "Guestbook" },
     ],
   },
   {

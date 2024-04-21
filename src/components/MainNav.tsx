@@ -8,8 +8,8 @@ export const NavList = [
     href: "/projects",
   },
   {
-    name: "Testimonials",
-    href: "/testimonials",
+    name: "Guestbook",
+    href: "/guestbook",
   },
   {
     name: "Contact",

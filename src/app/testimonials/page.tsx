@@ -4,14 +4,14 @@ import ReviewsSection from "@/components/Reviews";
 import { Separator } from "@/components/ui/separator";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
-const Testimonials = () => {
+const Guestbook = () => {
   return (
     <div className="mt-28 pb-20">
       <div className="space-y-2 container lg:px-48">
         <AnimatedCharacters
           className="lg:text-5xl text-3xl font-bold"
           type="heading1"
-          text="Testimonials"
+          text="Guest book"
         />
         <p className="text-[1rem] text-muted-foreground lg:w-1/2">
           Welcome to my Guestbook! I’d love to hear your thoughts about my work
@@ -25,4 +25,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Guestbook;

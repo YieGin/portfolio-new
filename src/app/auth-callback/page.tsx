@@ -16,7 +16,7 @@ const AuthCallback = () => {
       createUser({ auth0Id: user.sub, email: user.email });
       hasCreatedUser.current = true;
     }
-    navigate.push("/testimonials");
+    navigate.push("/guestbook");
   }, [createUser, navigate, user]);
 
   return (
