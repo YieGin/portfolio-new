@@ -19,18 +19,18 @@ const Hero = () => {
         >
           <h1 className="dark:text-white font-bold mb-4 text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-800">
-              Hello, I&apos;m a
+              Hello, I&apos;m
             </span>
             <br />
             <TypeAnimation
               sequence={[
                 "Islam",
                 1000,
-                "Full-Stack Developer",
+                "a Full-Stack Developer",
                 1000,
-                "Mobile Developer",
+                "a Mobile Developer",
                 1000,
-                "UI/UX Designer",
+                "a UI/UX Designer",
                 1000,
               ]}
               wrapper="span"
