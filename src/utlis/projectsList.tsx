@@ -16,7 +16,7 @@ const projectsList: CaseStudy[] = [
     websiteLink: "https://mern-food-ordering-app-frontend-one.vercel.app",
     youtubeLink: "https://www.youtube.com/watch?v=0oQ3Mk-DtPk&ab_channel=Yie",
     codeLink: "https://github.com/YieGin/mern-food-ordering-app-frontend",
-    skills: ["Next JS", "Tailwind CSS", "TypeScript", "Stripe", "Node JS", "Express JS", "ux/ui", "MongoDB", "Responsive Design", "Auth0", "React Query"],
+    skills: ["Next JS", "Tailwind CSS", "TypeScript", "Stripe", "Node JS", "Express JS", "UX/UI", "MongoDB", "Responsive Design", "Auth0", "React Query"],
   },
   {
     imgSrc: InpuctImg,
@@ -30,7 +30,7 @@ const projectsList: CaseStudy[] = [
     websiteLink: "https://impact-consulting-xi.vercel.app",
     youtubeLink: "",
     codeLink: "https://github.com/YieGin/Impact-consulting",
-    skills: ["Next JS", "Tailwind CSS", "TypeScript", "Stripe", "Framer Motion", "ux/ui", "Responsive Design"],
+    skills: ["Next JS", "Tailwind CSS", "TypeScript", "Stripe", "Framer Motion", "UX/UI", "Responsive Design"],
   },
   {
     imgSrc: VanguardEliteImg,
@@ -44,7 +44,7 @@ const projectsList: CaseStudy[] = [
     websiteLink: "https://gym-vanguard-elite-eedd.vercel.app",
     youtubeLink: "",
     codeLink: "https://github.com/YieGin/Gym-Vanguard-Elite",
-    skills: ["React", "CSS3", "Responsive Design", "Tailwind CSS", "JavaScript", "ux/ui", "Framer Motion"],
+    skills: ["React", "CSS3", "Responsive Design", "Tailwind CSS", "JavaScript", "UX/UI", "Framer Motion"],
   },
   {
     imgSrc: BookoeImg,
