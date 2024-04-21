@@ -12,7 +12,9 @@ const Header = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-3 right-0 z-40 mx-auto flex h-[60px] max-w-5xl items-center justify-between rounded-2xl border-b-2 px-8 shadow-sm saturate-100 backdrop-blur-[100px]">
+    <nav className={`${
+      isActive("/projects") ? "bg-transparent backdrop-blur-[100px]" : "bg-white dark:bg-transparent backdrop-blur-[1000px]"
+    } sticky top-3 right-0 z-40 mx-auto flex h-[60px] max-w-5xl items-center justify-between rounded-2xl border-b-2 px-8 shadow-sm saturate-100`}>
       <TransitionLink href={"/"}>
         <Logo
           className={`${
