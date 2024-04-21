@@ -102,7 +102,6 @@
     @apply bg-background text-foreground;
   }
 }
-/* Add this to your global styles.css file */
 @layer components {
   .spinning-ends::before,
   .spinning-ends::after {

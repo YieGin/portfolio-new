@@ -43,7 +43,8 @@ const Projects = () => {
               <CarouselItem key={index}>
                 <Card className="h-screen border-none">
                   <Image
-                    className="h-full object-cover absolute brightness-50 w-full"
+                   style={{ filter: 'brightness(25%)' }}
+                    className="h-full object-cover absolute w-full"
                     src={project.ProjectImg}
                     width={3500}
                     height={3500}
@@ -89,7 +90,7 @@ const Projects = () => {
                       <div className="flex flex-wrap gap-2 lg:gap-3 w-full">
                         {project.skills.map((skill, skillIndex) => (
                           <Badge
-                            className="w-max text-[0.7rem] md:text-[0.7rem]"
+                            className="w-max text-[0.7rem] md:text-[0.8rem]"
                             key={skillIndex}
                           >
                             {skill}
