@@ -1,32 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
-import { toast } from 'sonner';
-import { Button } from './ui/button';
-import { Textarea } from './ui/textarea';
-import { GiChainedHeart } from 'react-icons/gi';
-import StarRating from './StarRating';
-import StarDisplay from './StarDisplay';
-import { useCreateReview, useFetchReviews } from '@/query/userApi';
-import { z } from 'zod';
-import LoadingButton from '@/utlis/LoadingButton';
-import { Loader } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { toast } from "sonner";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+import { GiChainedHeart } from "react-icons/gi";
+import StarRating from "./StarRating";
+import { useCreateReview, useFetchReviews } from "@/query/userApi";
+import { z } from "zod";
+import LoadingButton from "@/utlis/LoadingButton";
+import { Loader } from "lucide-react";
+import StarDisplay from "./StarDisplay";
 
+// Updated schema to include rating validation
 const reviewSchema = z.object({
-  message: z.string().min(2, "Your message must be at least 2 characters long."),
+  message: z
+    .string()
+    .min(2, "Your message must be at least 2 characters long."),
+  rating: z.number().min(1, "Please select at least one star."),
 });
 
 const WriteReview = () => {
   const { mutateAsync: createReview, isLoading } = useCreateReview();
-  const { data: reviews, isError, isLoading: isReviewsLoading } = useFetchReviews();
+  const {
+    data: reviews,
+    isError,
+    isLoading: isReviewsLoading,
+  } = useFetchReviews();
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
   const [rating, setRating] = useState(0);
   const [averageRating, setAverageRating] = useState(0);
-  const [message, setMessage] = useState('');
-  const [messageError, setMessageError] = useState('');
+  const [message, setMessage] = useState("");
+  const [messageError, setMessageError] = useState("");
+  const [ratingError, setRatingError] = useState(""); // State for rating error
 
   useEffect(() => {
     if (reviews && reviews.length > 0) {
-      const totalRating = reviews.reduce((acc, review) => acc + (review.rating || 0), 0);
+      const totalRating = reviews.reduce(
+        (acc, review) => acc + (review.rating || 0),
+        0
+      );
       const avgRating = totalRating / reviews.length;
       setAverageRating(avgRating);
     }
@@ -39,7 +51,7 @@ const WriteReview = () => {
     }
 
     try {
-      reviewSchema.parse({ message });
+      reviewSchema.parse({ message, rating });
       const review = {
         user: user.sub!,
         message: message,
@@ -51,14 +63,20 @@ const WriteReview = () => {
       };
       await createReview(review);
       toast.success("Review submitted successfully!");
-      setMessage('');
+      setMessage("");
+      setRating(0);
+      setMessageError("");
+      setRatingError("");
     } catch (err) {
       if (err instanceof z.ZodError) {
-        setMessageError(err.errors[0].message);
-        toast.error(err.errors[0].message);
+        const messageErr = err.errors.find((e) => e.path.includes("message"));
+        const ratingErr = err.errors.find((e) => e.path.includes("rating"));
+        if (messageErr) setMessageError(messageErr.message);
+        if (ratingErr) setRatingError(ratingErr.message);
+        toast.error("Please correct the errors before submitting.");
       } else {
         console.error(err);
-        toast.error("You have already submitted a review. You cannot submit more than one.");
+        toast.error("An unexpected error occurred.");
       }
     }
   };
@@ -103,16 +121,27 @@ const WriteReview = () => {
                 <Textarea
                   id="reviewTextarea"
                   value={message}
-                  onChange={e => {
+                  onChange={(e) => {
                     setMessage(e.target.value);
-                    setMessageError('');
+                    setMessageError("");
                   }}
                   className=""
                   placeholder="Type your message here."
                 />
-                {messageError && <p className="text-[0.8rem] font-medium text-red-600">{messageError}</p>}
+                {messageError && (
+                  <p className="text-[0.8rem] font-medium text-red-600">
+                    {messageError}
+                  </p>
+                )}
+                {ratingError && (
+                  <p className="text-[0.8rem] font-medium text-red-600">
+                    {ratingError}
+                  </p>
+                )}
                 <div className="flex flex-col-reverse sm:flex-row gap-2 float-right mt-2">
-                  <StarRating onRating={setRating} />
+                  <div>
+                    <StarRating onRating={setRating} />
+                  </div>
                   <div className="flex gap-2">
                     <Button
                       className="w-max p-2 md:p-4 bg-red-500 hover:bg-red-600 text-white"
