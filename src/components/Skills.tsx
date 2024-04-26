@@ -109,10 +109,10 @@ const links = [
     href: "",
     icon: <SiPostgresql className="text-2xl" />,
     title: "Postgresql",
-  }, // URL missing
-  { href: "", icon: <SiPrisma className="text-2xl" />, title: "Prisma" }, // URL missing
-  { href: "", icon: <SiMysql className="text-2xl" />, title: "Mysql" }, // URL missing
-  { href: "", icon: <SiGit className="text-2xl" />, title: "Git" }, // URL missing
+  },
+  { href: "", icon: <SiPrisma className="text-2xl" />, title: "Prisma" },
+  { href: "", icon: <SiMysql className="text-2xl" />, title: "Mysql" },
+  { href: "", icon: <SiGit className="text-2xl" />, title: "Git" },
   {
     href: "https://github.com/YieGin",
     icon: <SiGithub className="text-2xl" />,
@@ -123,7 +123,7 @@ const links = [
     icon: <SiMongoose className="text-2xl" />,
     title: "Mongoose",
   },
-  { href: "", icon: <SiJest className="text-2xl" />, title: "Jest" }, // URL missing
+  { href: "", icon: <SiJest className="text-2xl" />, title: "Jest" },
   {
     href: "https://github.com/YieGin/mern-food-ordering-app-frontend/tree/main/api",
     icon: <SiReactquery className="text-2xl" />,
@@ -147,7 +147,7 @@ const Skills = () => {
     onscreen: (index: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: index * 0.1, duration: 0.2 },
+      transition: { delay: index * 0.1, duration: 0.1 },
     }),
   };
   const itemVariantsLeft = {
@@ -190,7 +190,7 @@ const Skills = () => {
             variants={itemVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             custom={index}
             key={index}
           >

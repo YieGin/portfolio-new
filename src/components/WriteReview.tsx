@@ -31,7 +31,7 @@ const WriteReview = () => {
   const [averageRating, setAverageRating] = useState(0);
   const [message, setMessage] = useState("");
   const [messageError, setMessageError] = useState("");
-  const [ratingError, setRatingError] = useState(""); // State for rating error
+  const [ratingError, setRatingError] = useState("");
 
   useEffect(() => {
     if (reviews && reviews.length > 0) {
