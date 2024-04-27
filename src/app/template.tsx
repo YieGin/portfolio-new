@@ -1,12 +1,15 @@
 "use client";
-
 import { animatePageIn } from "@/utlis/animations";
 import { useEffect } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    animatePageIn()
-  }, [])
+    const timer = setTimeout(() => {
+      animatePageIn();
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="z-20">
       <div

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import TransitionLink from "./TransitionLink";
 import { Logo } from "../../public/assets";
 
 const linkData = [
@@ -52,13 +51,13 @@ const Footer = () => {
                     </Link>
                   </div>
                 ) : (
-                  <TransitionLink
+                  <Link
                     key={link.text}
                     href={link.href}
                     className="text-[0.8rem] text-muted-foreground hover:dark:text-white hover:text-black cursor-pointer"
                   >
                     {link.text}
-                  </TransitionLink>
+                  </Link>
                 )
               )}
             </div>

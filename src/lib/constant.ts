@@ -15,7 +15,6 @@ import {
   Mouse,
   P1,
   P2,
-  P3,
   P4,
   P5,
   P6,
@@ -37,11 +36,11 @@ import {
 } from "../../public/assets";
 
 import {
-  SiFacebook,
+  SiUpwork,
   SiGithub,
   SiInstagram,
   SiSocialblade,
-  SiX,
+  SiLinkedin
 } from "react-icons/si";
 
 export const products = [
@@ -52,9 +51,6 @@ export const products = [
     thumbnail: P2,
   },
   {
-    thumbnail: P3,
-  },
-  {
     thumbnail: P4,
   },
   {
@@ -74,9 +70,6 @@ export const products = [
     thumbnail: P2,
   },
   {
-    thumbnail: P3,
-  },
-  {
     thumbnail: P4,
   },
   {
@@ -94,9 +87,6 @@ export const products = [
   },
   {
     thumbnail: P2,
-  },
-  {
-    thumbnail: P3,
   },
   {
     thumbnail: P4,
@@ -120,9 +110,9 @@ export const SOCIALS: Props = [
     icon: SiGithub,
   },
   {
-    href: "https://www.facebook.com/islam.bba.182/",
-    title: "Facebook",
-    icon: SiFacebook,
+    href: "https://www.upwork.com/freelancers/~015e9397eed4744df5?viewMode=1",
+    title: "Upwork",
+    icon: SiUpwork,
   },
   {
     href: "https://www.instagram.com/belamri_yie/",
@@ -132,7 +122,7 @@ export const SOCIALS: Props = [
   {
     href: "https://www.linkedin.com/in/islam-belamri/",
     title: "Linkedin",
-    icon: SiX,
+    icon: SiLinkedin,
   },
 ];
 
@@ -251,48 +241,42 @@ export const SoftwareList = [
   },
   {
     id: 5,
-    title: "GitHub",
-    img: github,
-    description: "Code Repository",
-  },
-  {
-    id: 6,
     title: "Git Bash",
     img: git,
     description: "Command Interface",
   },
   {
-    id: 7,
+    id: 6,
     title: "Spotify",
     img: spotify,
     description: "Music Streaming",
   },
   {
-    id: 8,
+    id: 7,
     title: "PowerShell",
     img: powershell,
     description: "Automation Tool",
   },
   {
-    id: 9,
+    id: 8,
     title: "Postman",
     img: postman,
     description: "API Testing",
   },
   {
-    id: 10,
+    id: 9,
     title: "Figma",
     img: figma,
     description: "Design Software",
   },
   {
-    id: 11,
+    id: 10,
     title: "Discord",
     img: discord,
     description: "Communication Platform",
   },
   {
-    id: 12,
+    id: 11,
     title: "VSCode",
     img: vscode,
     description: "Code Editor",

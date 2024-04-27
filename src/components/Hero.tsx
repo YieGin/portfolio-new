@@ -4,7 +4,6 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Avatar, AvatarImage } from "./ui/avatar";
-import TransitionLink from "./TransitionLink";
 import Link from "next/link";
 
 const Hero = () => {
@@ -46,7 +45,7 @@ const Hero = () => {
           </p>
           <div className="flex items-center justify-center sm:items-start sm:justify-start gap-5">
             <Button>
-              <TransitionLink href="/contact">Hire Me</TransitionLink>
+              <Link href="/contact">Hire Me</Link>
             </Button>
             <Button>
               <Link target="_blank" href="/assets/cv/Islam_Resume.pdf">

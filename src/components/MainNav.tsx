@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import TransitionLink from "./TransitionLink";
 
 export const NavList = [
   {
@@ -34,7 +34,7 @@ const MainNav = () => {
       <div className="flex gap-10">
         {NavList.map((item, index) => (
           <div key={index}>
-            <TransitionLink
+            <Link
               href={item.href}
               className={`text-[0.8rem] md:text-[1rem] font-medium text ${
                 isActive("/projects")
@@ -45,7 +45,7 @@ const MainNav = () => {
               }`}
             >
               {item.name}
-            </TransitionLink>
+            </Link>
           </div>
         ))}
       </div>

@@ -14,7 +14,6 @@ export { default as PcImgTwo } from "./Images/Pc2.jpg";
 // About Page
 export { default as P1 } from "./Images/p1.jpg";
 export { default as P2 } from "./Images/p2.jpg";
-export { default as P3 } from "./Images/p3.jpg";
 export { default as P4 } from "./Images/p4.jpg";
 export { default as P5 } from "./Images/p5.jpg";
 export { default as P6 } from "./Images/p6.jpg";
@@ -56,8 +55,3 @@ export { default as BiteZHero } from "./Images/BiteZHero.jpg";
 export { default as InpuctHero } from "./Images/InpuctHero.jpg";
 export { default as VanguardEliteHero } from "./Images/VanguardEliteHero.jpg";
 export { default as BookoeHero } from "./Images/BookoeHero.jpg";
-
-// Projects
-export { default as ShoppingImg } from "./Images/ShoppingImg.png";
-export { default as SpotfiyImg } from "./Images/SpotfiyImg.png";
-export { default as InstagramImg } from "./Images/InstagramImg.png";

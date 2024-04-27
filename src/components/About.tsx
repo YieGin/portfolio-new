@@ -7,7 +7,7 @@ import Stacks from "./Stacks";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import TransitionLink from "./TransitionLink";
+import Link from "next/link";
 
 const About = () => {
   const itemVariants = {
@@ -44,25 +44,23 @@ const About = () => {
             <SiSocialblade className="size-[18px]" />
             <h2 className="text-sm font-light">Bio</h2>
           </div>
-          <p className="text-[0.8rem] md:text-[1rem]">
-            With over four years of full stack development experience since
-            2021, I&apos;ve cultivated a strong foundation in HTML, CSS, and
-            JavaScript, progressing to sophisticated front-end development with
-            React.js and Next.js. My backend expertise extends to Python
-            frameworks like Flask and Django, and Node.js for RESTful API
-            integration. My diverse project portfolio includes a Django-based
-            book-selling platform and a comprehensive MERN stack food ordering
-            service, demonstrating my adaptability and modern authentication
-            methods. Committed to lifelong learning and teamwork, I&apos;m
-            poised to innovate in the dynamic field of web development. If
-            there&apos;s an opportunity that aligns with my expertise, please
-            don&apos;t hesitate to reach out for a conversation.
+          <p className="text-[0.8rem] md:text-[1rem] leading-8">
+            I started in web development in 2022, learning HTML, CSS,
+            JavaScript, and then advancing to React.js and Next.js. I&apos;ve worked
+            JavaScript, and then advancing to React.js and Next.js. Ive worked
+            at Metridsh using React Native and Next.js, and served as a Project
+            Lead at a startup. My successful projects on Upwork
+            showcase my full-stack capabilities, and I recently obtained a
+            Back-End Development certification. I offer a problem-solving
+            approach and a broad skill set, ready to deliver efficient and
+            innovative solutions. I&apos;m equipped to build engaging websites and
+            strong back-ends, adding value to any team.
           </p>
         </motion.div>
       </div>
-      <TransitionLink href="/about" className="flex items-center justify-center mt-5">
+      <Link href="/about" className="flex items-center justify-center mt-5">
         <Button className="font-bold">Know more about me</Button>
-      </TransitionLink>
+      </Link>
     </div>
   );
 };
