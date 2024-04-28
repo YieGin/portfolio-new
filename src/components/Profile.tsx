@@ -62,20 +62,20 @@ const ProfileSection = () => {
             Islam Belamri
           </h1>
           <p className="md:text-[0.9rem] text-[0.7rem] text-muted-foreground mt-2 md:mr-5 leading-7">
-            Since 2021, I&apos;ve evolved from mastering front-end technologies
-            like HTML, CSS, and JavaScript to becoming a proficient full-stack
-            developer. My journey included deep dives into React.js, mastering
-            advanced features and state management, and expanding into UI/UX
-            design principles. Transitioning to full-stack with Next.js,
-            I&apos;ve built scalable applications, moving into backend
-            development with Python, Flask, Django, and the MERN stack.
-            Highlights of my work include a secure book-selling platform and a
-            sophisticated food ordering website, showcasing my skills in
-            database management, security, and user authentication. Through
-            continuous learning and practical application, including three
-            in-depth backend courses, I&apos;m committed to growth, eagerly
-            tackling new technologies and complex challenges in a collaborative
-            environment.
+            Hello there, I’m Islam 👋 I’m a Full-Stack Developer with a
+            focus on Next.js, React.js, and Node.js. Starting my coding journey
+            in 2022, I quickly embraced both front-end and back-end
+            technologies, specializing in creating dynamic and secure web
+            applications. My expertise includes developing complex
+            functionalities and robust authentication systems with Auth0. After
+            a leadership role as a Project Lead, I shifted back to freelancing,
+            delivering full-stack solutions on Upwork. In 2024, I obtained a
+            Back-End Development Focus & Certification, which expanded my
+            server-side capabilities. I’m continually exploring the latest in
+            tech to ensure my skills are cutting-edge. Off the keyboard, I enjoy
+            engaging with the developer community and sharing knowledge. Feel
+            free to reach out or explore my projects. Let’s build something
+            innovative together!
           </p>
         </motion.div>
         <h3 className="absolute -right-44 xl:-right-48 top-1/2 rotate-90 tracking-wide text-3xl font-Pacifico md:block hidden">

@@ -40,7 +40,6 @@ export { default as mongodb } from "./Images/mongodb.png";
 export { default as apps } from "./Images/apps.png";
 export { default as anydo } from "./Images/anydo.png";
 export { default as skype } from "./Images/skype.png";
-export { default as github } from "./Images/github.png";
 export { default as git } from "./Images/git.png";
 export { default as visual } from "./Images/visual.png";
 export { default as spotify } from "./Images/spotify.png";

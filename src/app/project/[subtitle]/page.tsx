@@ -50,9 +50,9 @@ const ProjectPage = () => {
       </div>
       <Separator className="my-20" />
       <div className="container lg:px-48">
-        <div className="border-[1px] p-2 rounded-lg">
+        <div className="border-[1px] rounded-lg">
           <Image
-            className="object-cover rounded-lg h-full"
+            className="object-contain rounded-lg lg:h-[700px]"
             src={project.imgSrc}
             width={2000}
             height={2000}

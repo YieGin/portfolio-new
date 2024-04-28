@@ -25,7 +25,6 @@ import {
   discord,
   figma,
   git,
-  github,
   mongodb,
   postman,
   powershell,

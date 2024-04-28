@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
+import { Profile } from "../../public/assets";
 
 const Hero = () => {
   return (
@@ -56,7 +57,7 @@ const Hero = () => {
         </motion.div>
         <div className="flex items-center justify-center mt-10 sm:w-max">
           <Avatar className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
-            <AvatarImage className="object-cover" src="https://res.cloudinary.com/dnttuevkd/image/upload/v1714103594/profile-pic_52_pqg3qx.png" />
+            <AvatarImage className="object-cover" src="./assets/Images/profile-pic.png" />
           </Avatar>
         </div>
       </div>

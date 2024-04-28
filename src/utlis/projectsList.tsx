@@ -36,7 +36,7 @@ const projectsList: CaseStudy[] = [
     imgSrc: VanguardEliteImg,
     ProjectImg: VanguardEliteHero,
     icon: RiReactjsLine,
-    title: "Next JS",
+    title: "React JS",
     subtitle: "Gym Vanguard Elite",
     Summary: "E-commerce website for selling gym outfits",
     description:
@@ -50,7 +50,7 @@ const projectsList: CaseStudy[] = [
     imgSrc: BookoeImg,
     ProjectImg: BookoeHero,
     icon: SiNextdotjs,
-    title: "React JS",
+    title: "Next JS",
     subtitle: "Bookoe",
     Summary: "E-commerce website for selling books",
     description:

@@ -216,11 +216,10 @@ const Experience = () => {
               Continued Education
             </h2>
             <p className="text-[0.8rem]">
-              In 2024, I committed to deepening my backend proficiency. Through
-              comprehensive courses on Node.js and Python, I expanded my
-              technical skill set, which included mastering MVC architectures,
-              REST APIs. These achievements were certified by reputable Udemy
-              courses, representing over 160 hours of dedicated learning.
+              In 2024, I enhanced my back-end skills through extensive Node.js
+              and Python courses, mastering MVC architectures and REST APIs.
+              This training, certified by Udemy, involved over 160 hours of
+              focused study.
             </p>
           </motion.div>
         </div>
