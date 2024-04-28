@@ -43,7 +43,7 @@ const FormSection = () => {
 
   return (
     <div
-      className="flex flex-col md:w-1/2 space-y-5"
+      className="flex flex-col lg:w-1/2 space-y-5"
     >
       <p>Contact</p>
       <AnimatedCharacters

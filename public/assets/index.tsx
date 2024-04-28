@@ -8,6 +8,7 @@ export { default as BiteZImg } from "./Images/BiteZImg.png";
 export { default as InpuctImg } from "./Images/InpuctImg.png";
 export { default as BookoeImg } from "./Images/BookoeImg.png";
 export { default as Profile } from "./Images/Profile.jpg";
+export { default as ProfileHero } from "./Images/profile-pic.png";
 export { default as PcImg } from "./Images/Pc.jpg";
 export { default as PcImgTwo } from "./Images/Pc2.jpg";
 

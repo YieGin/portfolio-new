@@ -3,8 +3,10 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { Avatar, AvatarImage } from "./ui/avatar";
+import { Avatar } from "./ui/avatar";
 import Link from "next/link";
+import Image from "next/image";
+import { ProfileHero } from "../../public/assets";
 
 const Hero = () => {
   return (
@@ -16,7 +18,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="dark:text-white font-bold mb-4 text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
+          <h1 className="dark:text-white font-bold mb-4 text-2xl md:text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-800">
               Hello, I&apos;m
             </span>
@@ -37,7 +39,7 @@ const Hero = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-sm sm:text-lg mb-6 lg:text-xl">
+          <p className="text-gray-800 dark:text-gray-200 text-sm sm:text-lg mb-6 lg:text-xl">
             With a passion for creating seamless user experiences and a
             dedication to modern, clean design, I craft full-stack solutions
             that bring your digital visions to life. Let&apos;s build something great
@@ -55,9 +57,14 @@ const Hero = () => {
           </div>
         </motion.div>
         <div className="flex items-center justify-center mt-10 sm:w-max">
-          <Avatar className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
-            <AvatarImage className="object-cover" src="./assets/Images/profile-pic.png" />
-          </Avatar>
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+            <Image
+              className="object-cover"
+              src={ProfileHero}
+              layout="fill"
+              alt="Profile Picture"
+            />
+          </div>
         </div>
       </div>
     </section>

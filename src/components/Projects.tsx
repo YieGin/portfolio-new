@@ -41,20 +41,17 @@ const Projects = () => {
                 <div className="flex flex-col md:w-1/2">
                   <div className="flex items-center gap-2 mb-5">
                     <study.icon />
-                    <AnimatedCharacters
-                      className="text-1xl font-bold"
-                      type="heading2"
-                      text={study.title}
-                    />
+                    <p className="text-1xl font-bold">{study.title}</p>
                   </div>
                   <Link href={`/project/${study.subtitle}`}>
                     <Image
+                      className="rounded-md object-cover h-[350px] w-full"
+                      sizes="(max-width: 768px) 350px, 500px"
                       src={study.imgSrc}
                       width={500}
                       height={500}
                       priority
                       alt={study.subtitle}
-                      className="rounded-md object-cover h-[300px] w-full"
                     />
                   </Link>
                 </div>
@@ -73,7 +70,7 @@ const Projects = () => {
                       <RocketIcon className="h-4 w-4" />
                     </Alert>
                   </Link>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {study.skills.map((skill, skillIndex) => (
                       <Badge key={skillIndex}>{skill}</Badge>
                     ))}

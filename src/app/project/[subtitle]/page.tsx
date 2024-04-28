@@ -6,10 +6,10 @@ import projectsList from "@/utlis/projectsList";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { MdArrowOutward } from "react-icons/md";
 import { Loader } from "lucide-react";
-import Link from "next/link";
+import { CiGlobe } from "react-icons/ci";
+import { FaGithub, FaYoutube } from "react-icons/fa";
+import ProjectLink from "@/components/ProjectLink";
 
 const ProjectPage = () => {
   const { subtitle } = useParams();
@@ -49,35 +49,35 @@ const ProjectPage = () => {
         </div>
       </div>
       <Separator className="my-20" />
-      <div className="container lg:px-48">
-        <div className="border-[1px] rounded-lg">
-          <Image
-            className="object-contain rounded-lg lg:h-[700px]"
-            src={project.imgSrc}
-            width={2000}
-            height={2000}
-            alt={project.subtitle}
-          />
-        </div>
-        <p className="w-[90%] text-muted-foreground mt-5">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-2 md:gap-5 mt-5">
-          <Link target="_blank" href={project.websiteLink}>
-            <Button className="flex gap-1">
-              <p>Visit Website</p> <MdArrowOutward />
-            </Button>
-          </Link>
-          <Link target="_blank" href={project.codeLink}>
-            <Button className="flex gap-1">
-              <p>Github</p> <MdArrowOutward />
-            </Button>
-          </Link>
-          <Link target="_blank" href={project.youtubeLink}>
-            <Button className="flex gap-1">
-              <p>Youtube</p> <MdArrowOutward />
-            </Button>
-          </Link>
+      <div className="container flex gap-5 lg:px-48">
+        <Image
+          className="object-cover rounded-lg h-[350px]"
+          src={project.imgSrc}
+          width={2000}
+          height={2000}
+          alt={project.subtitle}
+        />
+        <div className="flex flex-col">
+          <p className="text-muted-foreground leading-8">
+            {project.description}
+          </p>
+          <div className="flex flex-col gap-5 mt-5">
+            <ProjectLink
+              url={project.websiteLink}
+              label="Website"
+              Icon={CiGlobe}
+            />
+            <ProjectLink
+              url={project.codeLink}
+              label="Github"
+              Icon={FaGithub}
+            />
+            <ProjectLink
+              url={project.youtubeLink}
+              label="Youtube"
+              Icon={FaYoutube}
+            />
+          </div>
         </div>
       </div>
     </div>

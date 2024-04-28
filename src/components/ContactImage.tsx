@@ -35,7 +35,7 @@ const ContactImage = () => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      className="w-1/2 relative md:block hidden"
+      className="w-1/2 relative lg:block hidden"
     >
       <Image
         className="w-full h-full object-cover rounded-md absolute brightness-75"

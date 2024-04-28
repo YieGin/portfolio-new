@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-between lg:gap-52 lg:justify-normal mt-5">
           {linkData.map((section) => (
-            <div key={section.id} className="space-y-4">
+            <div key={section.id} className="space-y-4 flex flex-col">
               {section.links.map((link) =>
                 section.id === "social" ? (
                   <div key={link.text} className="flex flex-col">
