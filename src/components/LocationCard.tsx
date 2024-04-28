@@ -1,5 +1,4 @@
 "use client";
-
 import createGlobe from "cobe";
 import { MapPinIcon } from "lucide-react";
 import * as React from "react";

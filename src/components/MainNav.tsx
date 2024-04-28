@@ -30,7 +30,7 @@ const MainNav = () => {
   const isActive = (path: string) => pathname === path;
   
   return (
-    <div>
+    <>
       <div className="flex gap-10">
         {NavList.map((item, index) => (
           <div key={index}>
@@ -49,7 +49,7 @@ const MainNav = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

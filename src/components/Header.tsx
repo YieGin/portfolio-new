@@ -12,11 +12,16 @@ const Header = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className={`${
-      isActive("/projects") ? "bg-transparent backdrop-blur-[100px]" : "bg-white dark:bg-transparent backdrop-blur-[1000px]"
-    } sticky top-3 right-0 z-40 mx-auto flex h-[60px] max-w-5xl items-center justify-between rounded-2xl border-b-2 px-8 shadow-sm saturate-100`}>
-      <Link href={"/"}>
+    <nav
+      className={`${
+        isActive("/projects")
+          ? "bg-transparent backdrop-blur-[100px]"
+          : "bg-white dark:bg-transparent backdrop-blur-[1000px]"
+      } sticky top-3 right-0 z-40 mx-auto flex h-[60px] max-w-5xl items-center justify-between rounded-2xl border-b-2 px-8 shadow-sm saturate-100`}
+    >
+      <Link href="/">
         <Logo
+          aria-label="Home"
           className={`${
             isActive("/projects") ? "text-[#fff]" : "text-[#000]"
           } dark:text-white w-[50px] h-[40px]`}

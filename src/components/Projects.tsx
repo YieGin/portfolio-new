@@ -50,8 +50,9 @@ const Projects = () => {
                   <Link href={`/project/${study.subtitle}`}>
                     <Image
                       src={study.imgSrc}
-                      width={1000}
-                      height={1000}
+                      width={500}
+                      height={500}
+                      priority
                       alt={study.subtitle}
                       className="rounded-md object-cover h-[300px] w-full"
                     />

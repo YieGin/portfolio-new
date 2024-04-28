@@ -14,19 +14,19 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <div className="z-20">
       <div
         id="banner-1"
-        className="min-h-screen bg-[#000] z-50 fixed top-0 left-0 w-1/4 hidden md:block"
+        className="min-h-screen bg-[#000] z-50 fixed top-0 left-0 w-1/4 hidden lg:block"
       />
       <div
         id="banner-2"
-        className="min-h-screen bg-[#000] z-50 fixed top-0 left-1/4 w-1/4 hidden md:block"
+        className="min-h-screen bg-[#000] z-50 fixed top-0 left-1/4 w-1/4 hidden lg:block"
       />
       <div
         id="banner-3"
-        className="min-h-screen bg-[#000] z-50 fixed top-0 left-2/4 w-1/4 hidden md:block"
+        className="min-h-screen bg-[#000] z-50 fixed top-0 left-2/4 w-1/4 hidden lg:block"
       />
       <div
         id="banner-4"
-        className="min-h-screen bg-[#000] z-50 fixed top-0 left-3/4 w-1/4 hidden md:block"
+        className="min-h-screen bg-[#000] z-50 fixed top-0 left-3/4 w-1/4 hidden lg:block"
       />
       {children}
     </div>

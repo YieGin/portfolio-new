@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
-import { Profile } from "../../public/assets";
 
 const Hero = () => {
   return (
