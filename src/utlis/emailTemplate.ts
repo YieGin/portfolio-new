@@ -1,8 +1,12 @@
 import { EmailTemplateParams } from "@/types";
 
-  
-  export function getEmailTemplate({ from, firstName, lastName, body }: EmailTemplateParams): string {
-    return `
+export function getEmailTemplate({
+  from,
+  firstName,
+  lastName,
+  body,
+}: EmailTemplateParams): string {
+  return `
       <!DOCTYPE html>
       <html lang="en">
       <head>
@@ -12,7 +16,7 @@ import { EmailTemplateParams } from "@/types";
       </head>
       <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #11161b;  display: flex; align-items: center; justify-content: center;">
       <div style="width: 600px; max-height: 100vh; margin: 20px auto; padding: 20px; background: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-          <img src="https://i.ibb.co/BNfzDYJ/Logo.png" alt="Logo" style="display: block; margin-left: auto; margin-right: auto; width: 100px;" />
+          <img src="https://i.ibb.co/BNfzDYJ/Logo.webp" alt="Logo" style="display: block; margin-left: auto; margin-right: auto; width: 100px;" />
           <h2 style="color: #333333; text-align: center;">New Message Received</h2>
           <div style="background-color: #f8f8f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
             <p><strong>Name:</strong> ${firstName} ${lastName}</p>
@@ -26,5 +30,4 @@ import { EmailTemplateParams } from "@/types";
       </body>
       </html>
     `;
-  }
-  
+}

@@ -55,6 +55,7 @@ npm install
 ```
 
 Create a .env file based on the provided .env.example file and fill in the necessary variables.
+
 ```bash
 NEXT_PUBLIC_AUTH0_DOMAIN=
 NEXT_PUBLIC_AUTH0_CLIENT_ID=
