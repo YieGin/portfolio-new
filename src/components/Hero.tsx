@@ -11,12 +11,12 @@ import { ProfileHero } from "../../public/assets";
 const Hero = () => {
   return (
     <section className="container py-10 lg:py-16 flex">
-      <div className="grid grid-cols-1 sm:grid-cols-12 ">
+      <div className="grid grid-cols-1 md:grid-cols-12 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          className="col-span-8 place-self-center text-center md:text-left justify-self-start"
         >
           <h1 className="dark:text-white font-bold mb-4 text-2xl md:text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-800">
@@ -45,18 +45,18 @@ const Hero = () => {
             that bring your digital visions to life. Let&apos;s build something great
             together.
           </p>
-          <div className="flex items-center justify-center sm:items-start sm:justify-start gap-5">
+          <div className="flex items-center justify-center md:items-start md:justify-start gap-5">
             <Button>
               <Link href="/contact">Hire Me</Link>
             </Button>
             <Button>
-              <Link target="_blank" href="/assets/cv/Islam_Resume.pdf">
+              <Link target="_blank" href="/assets/cv/Islam_Belamri.pdf">
                 Download CV
               </Link>
             </Button>
           </div>
         </motion.div>
-        <div className="flex items-center justify-center mt-10 sm:w-max">
+        <div className="flex items-center justify-center mt-10 md:w-max">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <Image
               className="object-cover"

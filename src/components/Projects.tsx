@@ -45,7 +45,7 @@ const Projects = () => {
                   </div>
                   <Link href={`/project/${study.subtitle}`}>
                     <Image
-                      className="rounded-md object-cover h-[350px] w-full"
+                      className="rounded-md object-cover h-[300px] w-full"
                       sizes="(max-width: 768px) 350px, 500px"
                       src={study.imgSrc}
                       width={500}
