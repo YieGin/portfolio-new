@@ -46,7 +46,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[90vh] overflow-hidden antialiased relative flex flex-col w-full"
+      className="h-full pb-52 overflow-hidden antialiased relative flex flex-col w-full"
     >
       <Header />
       <motion.div
