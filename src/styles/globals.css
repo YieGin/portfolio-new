@@ -108,10 +108,10 @@
     content: '';
     position: absolute;
     top: 0;
-    width: 12px; /* Size of the spinning circles */
-    height: 12px; /* Size of the spinning circles */
-    border: 2px solid #f3f4f6; /* Color of your line */
-    border-radius: 9999px; /* Fully rounded borders for circles */
+    width: 12px;
+    height: 12px;
+    border: 2px solid #f3f4f6;
+    border-radius: 9999px;
     transform: translate(-50%, -50%);
   }
 
