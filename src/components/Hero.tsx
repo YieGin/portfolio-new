@@ -54,9 +54,13 @@ const Hero = () => {
                 <Link href="/contact">Hire Me</Link>
               </Button>
               <Button>
-                <Link target="_blank" href="/assets/cv/Islam_Belamri.pdf">
+                <a
+                  href="/assets/cv/Islam_Belamri.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Download CV
-                </Link>
+                </a>
               </Button>
             </div>
           </motion.div>
