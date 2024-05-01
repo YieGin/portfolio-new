@@ -66,7 +66,9 @@ const Projects = () => {
                   </p>
                   <Link target="_blank" href={study.websiteLink}>
                     <Alert className="p-2 hover:underline">
-                      <AlertDescription>{study.websiteLink}</AlertDescription>
+                      <AlertDescription className="font-semibold tracking-wide">
+                        Explore Demo
+                      </AlertDescription>
                       <RocketIcon className="h-4 w-4" />
                     </Alert>
                   </Link>
