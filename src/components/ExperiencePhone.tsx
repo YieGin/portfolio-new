@@ -4,8 +4,8 @@ export const experiences = [
     {
       title: "Self-Led Learning",
       subtitle: "Continued Education",
-      description: "Embarking on my tech adventure in 2021, I was fueled by a zeal for web development and self-taught through YouTube and FreeCodeCamp. I quickly grasped HTML, CSS, JavaScript, and React, crafting my initial interactive websites.",
-      period: "2021 - 2022",
+      description: "Embarking on my tech adventure in 2022, I was fueled by a zeal for web development and self-taught through YouTube and FreeCodeCamp. I quickly grasped HTML, CSS, JavaScript, and React, crafting my initial interactive websites.",
+      period: "2022 - 2022",
     },
     {
       title: "Freelance Web Developer",

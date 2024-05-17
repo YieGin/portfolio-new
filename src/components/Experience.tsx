@@ -50,7 +50,7 @@ const Experience = () => {
               text="Self-Led Learning"
             />
             <p className="text-[0.8rem]">
-              Embarking on my tech adventure in 2021, I was fueled by a zeal for
+              Embarking on my tech adventure in 2022, I was fueled by a zeal for
               web development and self-taught through YouTube and FreeCodeCamp.
               I quickly grasped HTML, CSS, JavaScript, and React, crafting my
               initial interactive websites.

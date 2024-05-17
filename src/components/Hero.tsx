@@ -24,18 +24,20 @@ const Hero = () => {
           >
             <h1 className="dark:text-white font-bold mb-4 text-2xl md:text-4xl sm:text-5xl lg:text-6xl lg:leading-normal dark:font-extrabold">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-800">
-                Hello, I&apos;m
+                Hello, we are
               </span>
               <br />
               <TypeAnimation
                 sequence={[
-                  "Islam",
+                  "Forge",
                   1000,
-                  "a Full-Stack Developer",
+                  "creating clean designs",
                   1000,
-                  "a Mobile Developer",
+                  "building robust backends",
                   1000,
-                  "a UI/UX Designer",
+                  "crafting user experiences",
+                  1000,
+                  "developing mobile solutions",
                   1000,
                 ]}
                 wrapper="span"
@@ -51,30 +53,11 @@ const Hero = () => {
             </p>
             <div className="flex items-center justify-center md:items-start md:justify-start gap-5">
               <Button>
-                <Link href="/contact">Hire Me</Link>
-              </Button>
-              <Button>
-                <a
-                  href="/assets/cv/Islam_Belamri.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download CV
-                </a>
+                <Link href="/contact">Contact us</Link>
               </Button>
             </div>
           </motion.div>
-          <div className="flex items-center justify-center mt-10 md:w-max">
-            <Image
-              className="object-cover w-[250px] h-[250px] lg:w-[350px] lg:h-[350px]"
-              src={ProfileHero}
-              width={400}
-              height={400}
-              priority
-              loading="eager"
-              alt="Profile Picture"
-            />
-          </div>
+
         </div>
       </section>
     </>
