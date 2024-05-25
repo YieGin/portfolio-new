@@ -13,8 +13,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = createMetadata({
   title: {
-    absolute: "Islam Belamri",
-    template: "Islam Belamri | %s",
+    absolute: "Portfolio",
+    template: "Portfolio | %s",
   },
   description: "This is my professional portfolio site.",
 });

@@ -13,12 +13,6 @@ import {
   Monitor,
   Motherboard,
   Mouse,
-  P1,
-  P2,
-  P4,
-  P5,
-  P6,
-  P7,
   Power,
   anydo,
   apps,
@@ -30,7 +24,6 @@ import {
   powershell,
   skype,
   spotify,
-  visual,
   vscode,
 } from "../../public/assets";
 
@@ -38,68 +31,8 @@ import {
   SiUpwork,
   SiGithub,
   SiInstagram,
-  SiSocialblade,
   SiLinkedin
 } from "react-icons/si";
-
-export const products = [
-  {
-    thumbnail: P1,
-  },
-  {
-    thumbnail: P2,
-  },
-  {
-    thumbnail: P4,
-  },
-  {
-    thumbnail: P5,
-  },
-  {
-    thumbnail: P6,
-  },
-  {
-    thumbnail: P7,
-  },
-
-  {
-    thumbnail: P1,
-  },
-  {
-    thumbnail: P2,
-  },
-  {
-    thumbnail: P4,
-  },
-  {
-    thumbnail: P5,
-  },
-  {
-    thumbnail: P6,
-  },
-  {
-    thumbnail: P7,
-  },
-
-  {
-    thumbnail: P1,
-  },
-  {
-    thumbnail: P2,
-  },
-  {
-    thumbnail: P4,
-  },
-  {
-    thumbnail: P5,
-  },
-  {
-    thumbnail: P6,
-  },
-  {
-    thumbnail: P7,
-  },
-];
 
 
 export const SOCIALS: Props = [

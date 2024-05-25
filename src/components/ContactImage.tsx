@@ -38,7 +38,7 @@ const ContactImage = () => {
       className="w-1/2 relative lg:block hidden"
     >
       <Image
-        className="w-full h-full object-cover rounded-md absolute brightness-75"
+        className="w-full h-full object-cover rounded-sm absolute brightness-75"
         src={P1}
         width={2000}
         height={2000}

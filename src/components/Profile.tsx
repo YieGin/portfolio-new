@@ -22,7 +22,7 @@ const ProfileSection = () => {
     }),
   };
 
-  const name = "Islam Belamri";
+  const name = "Yie Belamri";
   const letters = name.split("").map((char, index) => (
     <span key={index} className="inline-block mx-2">
       {char}
@@ -59,10 +59,10 @@ const ProfileSection = () => {
             text="FullStack Developer"
           />
           <h1 className="sm:text-3xl font-bold md:hidden block">
-            Islam Belamri
+            Yie Belamri
           </h1>
           <p className="md:text-[0.9rem] text-[0.7rem] text-muted-foreground mt-2 md:mr-5 leading-7">
-            Hello there, I’m Islam 👋 I’m a Full-Stack Developer with a
+            Hello there, I’m Yie 👋 I’m a Full-Stack Developer with a
             focus on Next.js, React.js, and Node.js. Starting my coding journey
             in 2022, I quickly embraced both front-end and back-end
             technologies, specializing in creating dynamic and secure web

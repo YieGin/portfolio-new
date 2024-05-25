@@ -64,7 +64,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="text-[0.8rem] mt-10">
-          © Copyright 2024 – Islam. All Rights Reserved.
+          © Copyright 2024 – Yie. All Rights Reserved.
         </p>
       </div>
     </div>

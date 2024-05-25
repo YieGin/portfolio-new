@@ -29,7 +29,7 @@ const Hero = () => {
               <br />
               <TypeAnimation
                 sequence={[
-                  "Islam",
+                  "Yie",
                   1000,
                   "a Full-Stack Developer",
                   1000,
